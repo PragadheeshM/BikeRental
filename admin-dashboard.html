@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - RideOn</title>
+  <meta name="description" content="RideOn admin dashboard for managing users, bookings, bikes, and business analytics." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .dashboard{display:flex;min-height:100vh;}
+    .dashboard__sidebar{width:260px;background:var(--color-secondary);color:#fff;padding:1.5rem 0;display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;z-index:100;transition:transform .3s ease;}
+    .dashboard__sidebar-header{padding:0 1.5rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08);}
+    .dashboard__sidebar-nav{flex:1;padding:1rem 0.75rem;overflow-y:auto;}
+    .dashboard__sidebar-link{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;font-size:.875rem;color:#94a3b8;border-radius:.5rem;margin-bottom:.25rem;transition:all .2s ease;text-decoration:none;}
+    .dashboard__sidebar-link:hover,.dashboard__sidebar-link--active{background:rgba(249,115,22,.1);color:#f97316;}
+    .dashboard__sidebar-section{padding:.5rem 1rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-top:.75rem;}
+    .dashboard__main{flex:1;margin-left:260px;background:var(--bg-body);min-height:100vh;}
+    .dashboard__topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:var(--bg-card);border-bottom:1px solid var(--border-color);position:sticky;top:0;z-index:50;}
+    .dashboard__content{padding:2rem;}
+    .dashboard__overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;}
+    .stat-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:1rem;padding:1.5rem;transition:all .3s ease;}
+    .stat-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+    .chart-bar{display:flex;align-items:flex-end;gap:.5rem;height:200px;padding-top:1rem;}
+    .chart-bar__item{flex:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+    .chart-bar__fill{width:100%;border-radius:.5rem .5rem 0 0;transition:height .8s ease;height:0;}
+    .chart-bar__label{font-size:.65rem;color:#64748b;}
+    @media(max-width:1024px){
+      .dashboard__sidebar{transform:translateX(-100%);}
+      .dashboard__sidebar--open{transform:translateX(0);}
+      .dashboard__main{margin-left:0;}
+      .dashboard__overlay--active{display:block;}
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body">
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="dashboard__sidebar" id="sidebar">
+      <div class="dashboard__sidebar-header">
+        <a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span style="color:#f97316;">On</span></span></a>
+      </div>
+      <nav class="dashboard__sidebar-nav">
+        <div class="dashboard__sidebar-section">Main</div>
+        <a href="admin-dashboard.html" class="dashboard__sidebar-link dashboard__sidebar-link--active"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="bike" class="w-5 h-5"></i> Bikes</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="calendar-check" class="w-5 h-5"></i> Bookings</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="map" class="w-5 h-5"></i> Tours</a>
+        <div class="dashboard__sidebar-section">Management</div>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="users" class="w-5 h-5"></i> Users</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="message-square" class="w-5 h-5"></i> Reviews</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="credit-card" class="w-5 h-5"></i> Payments</a>
+        <div class="dashboard__sidebar-section">Settings</div>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="settings" class="w-5 h-5"></i> Settings</a>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="help-circle" class="w-5 h-5"></i> Help</a>
+      </nav>
+      <div style="padding:0.75rem 1rem;border-top:1px solid rgba(255,255,255,.08);">
+        <a href="index.html" class="dashboard__sidebar-link"><i data-lucide="arrow-left" class="w-5 h-5"></i> Back to Website</a>
+        <a href="login.html" class="dashboard__sidebar-link"><i data-lucide="log-out" class="w-5 h-5"></i> Logout</a>
+      </div>
+    </aside>
+    <div class="dashboard__overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="dashboard__main">
+      <div class="dashboard__topbar">
+        <div class="flex items-center gap-4">
+          <button class="lg:hidden btn btn--icon btn--ghost" id="sidebarToggle" aria-label="Toggle sidebar"><i data-lucide="menu" class="w-5 h-5"></i></button>
+          <h2 class="font-heading text-lg font-700" style="color: var(--text-heading);">Admin Dashboard</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button>
+          <button class="btn btn--icon btn--ghost relative" onclick="showToast('3 new notifications', 'info')"><i data-lucide="bell" class="w-5 h-5"></i><span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] rounded-full flex items-center justify-center">3</span></button>
+          <div class="flex items-center gap-2 pl-3 border-l border-slate-200 dark:border-slate-700">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full" alt="Admin" />
+            <div class="hidden md:block"><div class="text-sm font-600" style="color: var(--text-heading);">Jake Morrison</div><div class="text-xs text-slate-500">Administrator</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard__content">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="stat-card">
+            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center"><i data-lucide="bike" class="w-5 h-5 text-primary"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+12%</span></div>
+            <div class="font-heading text-2xl font-800" style="color: var(--text-heading);">524</div>
+            <div class="text-sm text-slate-500">Total Bikes</div>
+          </div>
+          <div class="stat-card">
+            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i data-lucide="calendar-check" class="w-5 h-5 text-accent"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+8%</span></div>
+            <div class="font-heading text-2xl font-800" style="color: var(--text-heading);">1,247</div>
+            <div class="text-sm text-slate-500">Bookings</div>
+          </div>
+          <div class="stat-card">
+            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+22%</span></div>
+            <div class="font-heading text-2xl font-800" style="color: var(--text-heading);">12,438</div>
+            <div class="text-sm text-slate-500">Registered Users</div>
+          </div>
+          <div class="stat-card">
+            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center"><i data-lucide="dollar-sign" class="w-5 h-5 text-purple-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+18%</span></div>
+            <div class="font-heading text-2xl font-800" style="color: var(--text-heading);">$89,540</div>
+            <div class="text-sm text-slate-500">Revenue (Mo)</div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid lg:grid-cols-3 gap-6 mb-8">
+          <!-- Bar Chart -->
+          <div class="lg:col-span-2 stat-card">
+            <div class="flex items-center justify-between mb-6"><h3 class="font-heading text-base font-700" style="color: var(--text-heading);">Revenue Overview</h3><select class="form-input py-1.5 px-3 text-xs w-auto"><option>This Year</option><option>Last Year</option></select></div>
+            <div class="relative w-full h-[280px] mt-4">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Donut Chart -->
+          <div class="stat-card">
+            <h3 class="font-heading text-base font-700 mb-6" style="color: var(--text-heading);">Bike Categories</h3>
+            <div class="flex justify-center mb-6">
+              <svg class="chart-donut" width="160" height="160" viewBox="0 0 160 160">
+                <circle cx="80" cy="80" r="60" fill="none" stroke="var(--border-color)" stroke-width="20" />
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#f97316" stroke-width="20" class="chart-donut__segment" data-value="35" style="transform:rotate(-90deg);transform-origin:center;" />
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#10b981" stroke-width="20" class="chart-donut__segment" data-value="25" style="transform:rotate(-90deg);transform-origin:center;" />
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#3b82f6" stroke-width="20" class="chart-donut__segment" data-value="20" style="transform:rotate(-90deg);transform-origin:center;" />
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#8b5cf6" stroke-width="20" class="chart-donut__segment" data-value="20" style="transform:rotate(-90deg);transform-origin:center;" />
+              </svg>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary"></span><span class="text-slate-600 dark:text-slate-400">Cruisers</span></div><span class="font-600" style="color: var(--text-heading);">35%</span></div>
+              <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-accent"></span><span class="text-slate-600 dark:text-slate-400">Adventure</span></div><span class="font-600" style="color: var(--text-heading);">25%</span></div>
+              <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-500"></span><span class="text-slate-600 dark:text-slate-400">Sport</span></div><span class="font-600" style="color: var(--text-heading);">20%</span></div>
+              <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-purple-500"></span><span class="text-slate-600 dark:text-slate-400">Scooters</span></div><span class="font-600" style="color: var(--text-heading);">20%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Bookings Table -->
+        <div class="stat-card">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+            <h3 class="font-heading text-base font-700" style="color: var(--text-heading);">Recent Bookings</h3>
+            <div class="flex items-center gap-3"><input type="text" placeholder="Search bookings..." class="form-input py-1.5 px-3 text-sm w-48" data-table-search="bookingsTable" /><a href="#" class="btn btn--primary btn--sm">View All</a></div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm" id="bookingsTable">
+              <thead><tr class="border-b border-slate-200 dark:border-slate-700">
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>User</th>
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Bike</th>
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Date</th>
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Amount</th>
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase">Status</th>
+                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase">Action</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Sarah Chen</span></div></td><td class="py-3 px-4 text-slate-500">BMW GS 1250</td><td class="py-3 px-4 text-slate-500">Mar 28, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$285</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Marcus Rivera</span></div></td><td class="py-3 px-4 text-slate-500">Kawasaki Ninja 650</td><td class="py-3 px-4 text-slate-500">Mar 27, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$165</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-blue-500/10 text-blue-500">Upcoming</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Tom Wheeler</span></div></td><td class="py-3 px-4 text-slate-500">Mountain Tour (5D)</td><td class="py-3 px-4 text-slate-500">Mar 25, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$899</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Lisa Park</span></div></td><td class="py-3 px-4 text-slate-500">Vespa Primavera</td><td class="py-3 px-4 text-slate-500">Mar 22, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$54</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Completed</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Emily Davis</span></div></td><td class="py-3 px-4 text-slate-500">Royal Enfield 350</td><td class="py-3 px-4 text-slate-500">Mar 20, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$75</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-red-500/10 text-red-500">Cancelled</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script>
+    lucide.createIcons();
+    /* Sidebar toggle for mobile */
+    var toggle=document.getElementById('sidebarToggle');
+    var sidebar=document.getElementById('sidebar');
+    var overlay=document.getElementById('sidebarOverlay');
+    if(toggle){toggle.addEventListener('click',function(){sidebar.classList.toggle('dashboard__sidebar--open');overlay.classList.toggle('dashboard__overlay--active');});}
+    if(overlay){overlay.addEventListener('click',function(){sidebar.classList.remove('dashboard__sidebar--open');overlay.classList.remove('dashboard__overlay--active');});}
+    
+    /* Initialize Revenue Chart.js */
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('revenueChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar', // Using bar chart as requested
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          datasets: [{
+            label: 'Revenue ($)',
+            data: [45000, 65000, 50000, 80000, 55000, 90000, 75000, 95000, 70000, 60000, 85000, 100000],
+            backgroundColor: '#f97316', // Primary color
+            borderRadius: 6,
+            barPercentage: 0.6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: document.documentElement.classList.contains('dark') ? '#1e293b' : '#334155',
+              callbacks: { label: function(context) { return '$' + context.formattedValue; } }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true, grid: { borderDash: [5, 5], color: 'rgba(148, 163, 184, 0.2)' } },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

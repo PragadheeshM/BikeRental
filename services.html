@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - RideOn | Bike Rentals & Guided Tours</title>
+  <meta name="description" content="Explore RideOn's full range of services: premium bike rentals, guided motorcycle tours, corporate events, airport pickups, and safety gear packages." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNavbar"><div class="navbar__container"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link navbar__link--active">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+          <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+        </li>
+      </ul>
+      <div class="navbar__actions"><button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button><button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button><a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a><a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a><button class="navbar__toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" class="w-6 h-6 icon-menu"></i><i data-lucide="x" class="w-6 h-6 icon-close" style="display:none;"></i></button></div></div></nav>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="page-banner__container">
+      <h1 class="page-banner__title animate-on-scroll">Our Services</h1>
+      <div class="page-banner__breadcrumb animate-on-scroll" data-delay="100"><a href="index.html">Home</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span class="text-primary">Services</span></div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label"><i data-lucide="layers" class="w-4 h-4"></i> WHAT WE OFFER</span>
+        <h2 class="section__title">Complete Riding Solutions</h2>
+        <p class="section__subtitle">From quick city rentals to multi-day adventure tours, we have everything you need for the perfect ride.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 animate-on-scroll">
+        <button class="btn btn--sm btn--primary" onclick="filterServices('all', this)">All</button>
+        <button class="btn btn--sm btn--ghost" onclick="filterServices('rental', this)">Rentals</button>
+        <button class="btn btn--sm btn--ghost" onclick="filterServices('tour', this)">Tours</button>
+        <button class="btn btn--sm btn--ghost" onclick="filterServices('addon', this)">Add-ons</button>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid">
+        <!-- Service 1 -->
+        <div class="card animate-on-scroll group" data-type="rental" data-delay="0">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&h=350&fit=crop" alt="City bike rental" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge">Rental</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">City Bike Rentals</h3>
+            <p class="card__text">Explore the city at your own pace with our well-maintained cruisers, scooters, and commuter bikes. Flexible hourly, daily, or weekly plans.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Free helmet & lock included</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Comprehensive insurance</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> 24/7 roadside assistance</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$18 <span>/ day</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card animate-on-scroll group" data-type="rental" data-delay="100">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&h=350&fit=crop" alt="Sport bike rental" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge bg-red-500/10 text-red-500">Rental</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Sport Bike Rentals</h3>
+            <p class="card__text">Feel the adrenaline on our premium sport bikes. From Ninja 650s to Ducati Panigales, experience pure performance on the open road.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Full racing gear available</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Track day experiences</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Premium insurance package</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$55 <span>/ day</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card animate-on-scroll group" data-type="rental" data-delay="200">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=350&fit=crop" alt="Adventure motorcycle rental" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge bg-accent/10 text-accent">Rental</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Adventure Motorcycle Rentals</h3>
+            <p class="card__text">Conquer any terrain with our adventure-ready motorcycles. BMW GS, KTM Adventures, and more—built for the road less traveled.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Panniers & luggage included</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> GPS navigation system</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Off-road briefing session</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$85 <span>/ day</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card animate-on-scroll group" data-type="tour" data-delay="0">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=350&fit=crop" alt="Mountain guided tour" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge bg-blue-500/10 text-blue-500">Tour</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Mountain Pass Tours</h3>
+            <p class="card__text">Expert-guided tours through the most breathtaking mountain passes. Includes bike, gear, accommodation, and professional photography.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> 3-7 day packages</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Professional guide & support vehicle</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Hotel stays & meals included</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$899 <span>/ person</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="card animate-on-scroll group" data-type="tour" data-delay="100">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=350&fit=crop" alt="Coastal tour" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge bg-blue-500/10 text-blue-500">Tour</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Coastal Highway Tours</h3>
+            <p class="card__text">Ride along stunning coastlines with ocean breeze, beach stops, and sunset viewpoints. Perfect for couples and small groups.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> 2-5 day packages</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Beachside accommodations</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Drone footage included</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$549 <span>/ person</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="card animate-on-scroll group" data-type="addon" data-delay="200">
+          <div class="relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&h=350&fit=crop" alt="Safety gear" class="card__image w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute top-4 left-4"><span class="card__badge bg-purple-500/10 text-purple-500">Add-on</span></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Premium Safety Gear Package</h3>
+            <p class="card__text">Top-of-the-line riding gear including certified helmets, armored jackets, gloves, and boots. Ride safe on every adventure.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> ECE certified helmets</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> CE-rated armor protection</li>
+              <li class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="check" class="w-4 h-4 text-accent"></i> Sanitized after every use</li>
+            </ul>
+          </div>
+          <div class="card__footer">
+            <div class="card__price">$15 <span>/ day</span></div>
+            <a href="service-details.html" class="btn btn--primary btn--sm">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--gray">
+    <div class="section__container">
+      <div class="bg-gradient-to-r from-secondary to-secondary-light rounded-3xl p-10 md:p-16 text-center relative overflow-hidden animate-on-scroll">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+          <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-4">Can't Find What You Need?</h2>
+          <p class="text-slate-400 text-lg max-w-xl mx-auto mb-8">We offer custom packages tailored to your specific requirements. Contact us for a personalized quote.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">Get Custom Quote <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer"><div class="footer__grid"><div><a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><p class="footer__brand-text">Premium bike rentals and curated guided tours.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a></div></div><div><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Our Bikes</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li><li><a href="blog.html" class="footer__link">Blog</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div><div><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="services.html" class="footer__link">Bike Rentals</a></li><li><a href="services.html" class="footer__link">Guided Tours</a></li><li><a href="services.html" class="footer__link">Corporate Events</a></li><li><a href="services.html" class="footer__link">Airport Pickup</a></li></ul></div><div><h4 class="footer__heading">Contact</h4><div class="space-y-3"><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p></div></div></div><div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p><div class="footer__bottom-links"><a href="contact.html">Support</a></div></div></div></footer>
+
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+  <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+    function filterServices(type, btn) {
+      var cards = document.querySelectorAll('#servicesGrid .card');
+      var buttons = btn.parentElement.querySelectorAll('.btn');
+      buttons.forEach(function(b){b.classList.remove('btn--primary');b.classList.add('btn--ghost');});
+      btn.classList.remove('btn--ghost');btn.classList.add('btn--primary');
+      cards.forEach(function(card){
+        if(type==='all'||card.dataset.type===type){card.style.display='';card.style.animation='fadeIn 0.4s ease forwards';}
+        else{card.style.display='none';}
+      });
+    }
+  </script>
+  <style>@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}</style>
+</body>
+</html>

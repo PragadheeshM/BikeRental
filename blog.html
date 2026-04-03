@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - RideOn | Riding Tips, Tour Stories & Adventure Guides</title>
+  <meta name="description" content="Read the latest articles on motorcycle touring, bike maintenance tips, adventure guides, and rider stories from the RideOn community." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNavbar"><div class="navbar__container"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+          <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+        </li>
+      </ul>
+      <div class="navbar__actions"><button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button><button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button><a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a><a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a><button class="navbar__toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" class="w-6 h-6 icon-menu"></i><i data-lucide="x" class="w-6 h-6 icon-close" style="display:none;"></i></button></div></div></nav>
+
+  <section class="page-banner"><div class="page-banner__container"><h1 class="page-banner__title animate-on-scroll">Our Blog</h1><div class="page-banner__breadcrumb animate-on-scroll" data-delay="100"><a href="index.html">Home</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span class="text-primary">Blog</span></div></div></section>
+
+  <section class="section">
+    <div class="section__container">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <!-- Blog Grid -->
+        <div class="lg:col-span-2">
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Post 1 -->
+            <div class="card animate-on-scroll group" data-delay="0">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=600&h=350&fit=crop" alt="Mountain road motorcycle" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge">Adventure</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Mar 28, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 5 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">Top 10 Mountain Roads Every Biker Must Ride</a></h3>
+                <p class="card__text">Discover the most breathtaking mountain roads around the world that will make your heart race and your spirit soar.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Jake Morrison</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+            <!-- Post 2 -->
+            <div class="card animate-on-scroll group" data-delay="100">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=350&fit=crop" alt="Motorcycle maintenance" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge bg-accent/10 text-accent">Tips</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Mar 22, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">Essential Pre-Ride Checklist for Long Trips</a></h3>
+                <p class="card__text">Before hitting the road, make sure your bike and gear are in top shape. Here's what every rider should check.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Priya Sharma</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+            <!-- Post 3 -->
+            <div class="card animate-on-scroll group" data-delay="0">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=350&fit=crop" alt="Coastal ride" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge bg-blue-500/10 text-blue-500">Story</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Mar 15, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 6 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">My First Coastal Tour: A Rider's Journal</a></h3>
+                <p class="card__text">A personal account of riding 300km along the Pacific coast—the wind, the waves, and the freedom.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Marcus Rivera</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+            <!-- Post 4 -->
+            <div class="card animate-on-scroll group" data-delay="100">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&h=350&fit=crop" alt="Sport bike" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge bg-red-500/10 text-red-500">Gear</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Mar 10, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 4 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">2026 Best Riding Gear Guide: Helmets to Boots</a></h3>
+                <p class="card__text">Our experts review the top riding gear for 2026 — keeping you safe and stylish on every journey.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Sarah Chen</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+            <!-- Post 5 -->
+            <div class="card animate-on-scroll group" data-delay="0">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=350&fit=crop" alt="Forest trail" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge bg-green-500/10 text-green-500">Guide</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Mar 05, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 7 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">Beginner's Guide to Off-Road Riding</a></h3>
+                <p class="card__text">New to off-road? Here's everything you need to know before taking your adventure bike onto unpaved terrain.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Marcus Chen</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+            <!-- Post 6 -->
+            <div class="card animate-on-scroll group" data-delay="100">
+              <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=350&fit=crop" alt="High altitude ride" class="card__image w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110" /><div class="absolute top-4 left-4"><span class="card__badge">Adventure</span></div></div>
+              <div class="card__body">
+                <div class="flex items-center gap-3 text-xs text-slate-500 mb-2"><span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Feb 28, 2026</span><span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min read</span></div>
+                <h3 class="card__title"><a href="blog-details.html" class="hover:text-primary transition-colors">Riding at High Altitude: Tips & Precautions</a></h3>
+                <p class="card__text">High altitude rides demand special preparation. Learn how to handle thin air, cold temps, and tricky roads.</p>
+              </div>
+              <div class="card__footer"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full" alt="" /><span class="text-xs font-600 text-slate-600 dark:text-slate-400">Jake Morrison</span></div><a href="blog-details.html" class="text-sm text-primary font-600 hover:underline">Read More</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1 space-y-8">
+          <!-- Search -->
+          <div class="card p-6 animate-on-scroll">
+            <h4 class="font-heading text-lg font-700 mb-4" style="color: var(--text-heading);">Search</h4>
+            <div class="relative"><input type="text" placeholder="Search articles..." class="form-input pr-10" /><i data-lucide="search" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i></div>
+          </div>
+          <!-- Categories -->
+          <div class="card p-6 animate-on-scroll">
+            <h4 class="font-heading text-lg font-700 mb-4" style="color: var(--text-heading);">Categories</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"><span>Adventure Rides</span><span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">12</span></a></li>
+              <li><a href="#" class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"><span>Riding Tips</span><span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">8</span></a></li>
+              <li><a href="#" class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"><span>Gear Reviews</span><span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">6</span></a></li>
+              <li><a href="#" class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"><span>Rider Stories</span><span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">15</span></a></li>
+              <li><a href="#" class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"><span>Tour Guides</span><span class="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">10</span></a></li>
+            </ul>
+          </div>
+          <!-- Popular Posts -->
+          <div class="card p-6 animate-on-scroll">
+            <h4 class="font-heading text-lg font-700 mb-4" style="color: var(--text-heading);">Popular Posts</h4>
+            <div class="space-y-4">
+              <a href="blog-details.html" class="flex gap-3 group"><img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=80&h=80&fit=crop" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" alt="" /><div><h5 class="text-sm font-600 text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors line-clamp-2">Top 10 Mountain Roads Every Biker Must Ride</h5><span class="text-xs text-slate-400">Mar 28, 2026</span></div></a>
+              <a href="blog-details.html" class="flex gap-3 group"><img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=80&h=80&fit=crop" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" alt="" /><div><h5 class="text-sm font-600 text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors line-clamp-2">Essential Pre-Ride Checklist for Long Trips</h5><span class="text-xs text-slate-400">Mar 22, 2026</span></div></a>
+              <a href="blog-details.html" class="flex gap-3 group"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=80&h=80&fit=crop" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" alt="" /><div><h5 class="text-sm font-600 text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors line-clamp-2">My First Coastal Tour: A Rider's Journal</h5><span class="text-xs text-slate-400">Mar 15, 2026</span></div></a>
+            </div>
+          </div>
+          <!-- Tags -->
+          <div class="card p-6 animate-on-scroll">
+            <h4 class="font-heading text-lg font-700 mb-4" style="color: var(--text-heading);">Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Adventure</a>
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Motorcycle</a>
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Safety</a>
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Touring</a>
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Gear</a>
+              <a href="#" class="px-3 py-1.5 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">Off-Road</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer"><div class="footer__grid"><div><a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><p class="footer__brand-text">Premium bike rentals and curated guided tours.</p></div><div><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Our Bikes</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li><li><a href="blog.html" class="footer__link">Blog</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div><div><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="services.html" class="footer__link">Bike Rentals</a></li><li><a href="services.html" class="footer__link">Guided Tours</a></li><li><a href="services.html" class="footer__link">Corporate Events</a></li></ul></div><div><h4 class="footer__heading">Contact</h4><div class="space-y-3"><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p></div></div></div><div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p><div class="footer__bottom-links"></div></div></div></footer>
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+  <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

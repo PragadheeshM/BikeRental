@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - RideOn | Our Story & Mission</title>
+  <meta name="description" content="Learn about RideOn's mission to deliver premium bike rental experiences and unforgettable guided tours. Meet our team and discover our story." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: { DEFAULT: '#f97316', light: '#fb923c', dark: '#ea580c' }, secondary: { DEFAULT: '#0f172a', light: '#1e293b', lighter: '#334155' }, accent: { DEFAULT: '#10b981', light: '#34d399', dark: '#059669' }, surface: { DEFAULT: '#ffffff', dark: '#151929', darker: '#0c0f1a' } }, fontFamily: { heading: ['Outfit','sans-serif'], body: ['Inter','sans-serif'] } } } };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNavbar">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a>
+      <ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link navbar__link--active">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+          <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+        </li>
+      </ul>
+      <div class="navbar__actions">
+        <button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button>
+        <button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button>
+        <a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a>
+        <a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" class="w-6 h-6 icon-menu"></i><i data-lucide="x" class="w-6 h-6 icon-close" style="display:none;"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="page-banner__container">
+      <h1 class="page-banner__title animate-on-scroll">About Us</h1>
+      <div class="page-banner__breadcrumb animate-on-scroll" data-delay="100">
+        <a href="index.html">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-primary">About Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <div class="section__container">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-slide-left">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=600&h=500&fit=crop" alt="RideOn team on motorcycles" class="rounded-2xl shadow-xl w-full object-cover h-[450px]" />
+            <div class="absolute -bottom-6 -right-6 bg-primary rounded-2xl p-6 text-white shadow-xl animate-on-scroll" data-delay="300">
+              <div class="font-heading text-4xl font-900">8+</div>
+              <div class="text-sm text-white/80">Years of Adventure</div>
+            </div>
+          </div>
+        </div>
+        <div class="animate-slide-right">
+          <span class="section__label"><i data-lucide="info" class="w-4 h-4"></i> OUR STORY</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-800 mb-6" style="color: var(--text-heading);">From a Passion Project to a Global Riding Community</h2>
+          <p class="text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Founded in 2018 by a group of avid motorcycle enthusiasts, RideOn started with a simple idea: make premium motorcycle experiences accessible to everyone. What began as a small garage with five bikes has grown into a fleet of 500+ vehicles across multiple cities.</p>
+          <p class="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Today, we don't just rent bikes—we craft unforgettable journeys. Our expert guides, meticulously maintained fleet, and commitment to safety have made us the trusted choice for over 12,000 riders worldwide.</p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><i data-lucide="check-circle" class="w-5 h-5 text-primary"></i></div><span class="text-sm font-600 text-slate-700 dark:text-slate-300">Premium Fleet</span></div>
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center"><i data-lucide="check-circle" class="w-5 h-5 text-accent"></i></div><span class="text-sm font-600 text-slate-700 dark:text-slate-300">Expert Guides</span></div>
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500"></i></div><span class="text-sm font-600 text-slate-700 dark:text-slate-300">Full Insurance</span></div>
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-500"></i></div><span class="text-sm font-600 text-slate-700 dark:text-slate-300">24/7 Support</span></div>
+          </div>
+          <a href="services.html" class="btn btn--primary btn--lg">Explore Our Services <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / VISION -->
+  <section class="section section--gray">
+    <div class="section__container">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-8 text-center animate-on-scroll" data-delay="0">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-5"><i data-lucide="target" class="w-8 h-8 text-white"></i></div>
+          <h3 class="font-heading text-xl font-700 mb-3" style="color: var(--text-heading);">Our Mission</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">To make premium motorcycle experiences accessible to everyone, fostering a global community of riders who explore the world on two wheels with confidence and joy.</p>
+        </div>
+        <div class="card p-8 text-center animate-on-scroll" data-delay="150">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-5"><i data-lucide="eye" class="w-8 h-8 text-white"></i></div>
+          <h3 class="font-heading text-xl font-700 mb-3" style="color: var(--text-heading);">Our Vision</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">To become the world's most trusted motorcycle rental and tour platform, connecting riders with the most breathtaking roads, cultures, and experiences on every continent.</p>
+        </div>
+        <div class="card p-8 text-center animate-on-scroll" data-delay="300">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-5"><i data-lucide="heart" class="w-8 h-8 text-white"></i></div>
+          <h3 class="font-heading text-xl font-700 mb-3" style="color: var(--text-heading);">Our Values</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Safety first, customer obsession, sustainability, and passion. Every decision we make is guided by these core principles that define who we are as a company.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label"><i data-lucide="users" class="w-4 h-4"></i> OUR TEAM</span>
+        <h2 class="section__title">Meet the Riders Behind RideOn</h2>
+        <p class="section__subtitle">Passionate riders, experienced guides, and dedicated professionals who make every journey extraordinary.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="card text-center overflow-hidden animate-on-scroll group" data-delay="0">
+          <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face" alt="Jake Morrison" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" /></div>
+          <div class="p-5">
+            <h4 class="font-heading text-lg font-700" style="color: var(--text-heading);">Jake Morrison</h4>
+            <p class="text-primary text-sm font-600 mb-2">Founder & CEO</p>
+            <p class="text-slate-500 text-xs leading-relaxed">20+ years of riding experience across 30 countries. Harley enthusiast and adventure seeker.</p>
+          </div>
+        </div>
+        <div class="card text-center overflow-hidden animate-on-scroll group" data-delay="100">
+          <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face" alt="Priya Sharma" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" /></div>
+          <div class="p-5">
+            <h4 class="font-heading text-lg font-700" style="color: var(--text-heading);">Priya Sharma</h4>
+            <p class="text-primary text-sm font-600 mb-2">Head of Operations</p>
+            <p class="text-slate-500 text-xs leading-relaxed">Logistics expert ensuring every bike is impeccably maintained and every tour runs flawlessly.</p>
+          </div>
+        </div>
+        <div class="card text-center overflow-hidden animate-on-scroll group" data-delay="200">
+          <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Marcus Chen" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" /></div>
+          <div class="p-5">
+            <h4 class="font-heading text-lg font-700" style="color: var(--text-heading);">Marcus Chen</h4>
+            <p class="text-primary text-sm font-600 mb-2">Lead Tour Guide</p>
+            <p class="text-slate-500 text-xs leading-relaxed">Certified adventure guide with deep knowledge of mountain trails and hidden gems worldwide.</p>
+          </div>
+        </div>
+        <div class="card text-center overflow-hidden animate-on-scroll group" data-delay="300">
+          <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face" alt="Sofia Rodriguez" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" /></div>
+          <div class="p-5">
+            <h4 class="font-heading text-lg font-700" style="color: var(--text-heading);">Sofia Rodriguez</h4>
+            <p class="text-primary text-sm font-600 mb-2">Customer Experience</p>
+            <p class="text-slate-500 text-xs leading-relaxed">Ensuring every rider has a seamless and memorable experience from booking to return.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="section section--gray">
+    <div class="section__container">
+      <div class="text-center mb-10 animate-on-scroll">
+        <p class="text-sm font-600 uppercase tracking-wider text-slate-400">Trusted by Leading Brands</p>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50 animate-on-scroll">
+        <span class="font-heading text-2xl font-800 text-slate-400">BMW</span>
+        <span class="font-heading text-2xl font-800 text-slate-400">KTM</span>
+        <span class="font-heading text-2xl font-800 text-slate-400">Harley</span>
+        <span class="font-heading text-2xl font-800 text-slate-400">Kawasaki</span>
+        <span class="font-heading text-2xl font-800 text-slate-400">Ducati</span>
+        <span class="font-heading text-2xl font-800 text-slate-400">Vespa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div><a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a><a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a></div></div>
+      <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Our Bikes</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li><li><a href="blog.html" class="footer__link">Blog</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+      <div><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="services.html" class="footer__link">Bike Rentals</a></li><li><a href="services.html" class="footer__link">Guided Tours</a></li><li><a href="services.html" class="footer__link">Corporate Events</a></li><li><a href="services.html" class="footer__link">Airport Pickup</a></li><li><a href="services.html" class="footer__link">Safety Gear</a></li></ul></div>
+      <div><h4 class="footer__heading">Contact</h4><div class="space-y-3"><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p></div></div>
+    </div>
+    <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p><div class="footer__bottom-links"><a href="contact.html">Support</a></div></div></div>
+  </footer>
+
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+  <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

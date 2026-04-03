@@ -1,0 +1,110 @@
+/* ============================================
+   DARK MODE OVERRIDES
+   Applied when .dark class is on <html> element
+   ============================================ */
+
+.dark {
+  /* Surfaces */
+  --bg-body: #0c0f1a;
+  --bg-card: #151929;
+  --bg-card-hover: #1c2238;
+  --bg-glass: rgba(12, 15, 26, 0.8);
+  --bg-glass-strong: rgba(12, 15, 26, 0.95);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Text */
+  --text-heading: #f1f5f9;
+  --text-body: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Borders */
+  --border-color: #1e293b;
+  --border-color-light: #1a2035;
+
+  /* Neutrals */
+  --color-gray-50: #0f1525;
+  --color-gray-100: #151929;
+  --color-gray-200: #1e293b;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
+
+  color-scheme: dark;
+}
+
+/* --- Dark Mode Scrollbar --- */
+.dark ::-webkit-scrollbar-track {
+  background: #0c0f1a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* --- Dark Mode Form Inputs --- */
+.dark .form-input {
+  background: #151929;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark .form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.dark .form-input::placeholder {
+  color: #475569;
+}
+
+/* --- Dark Mode Skeleton --- */
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+}
+
+/* --- Dark Footer Adjustments --- */
+.dark .footer {
+  background: #070a12;
+}
+
+.dark .footer__bottom {
+  border-top-color: rgba(255, 255, 255, 0.04);
+}
+
+/* --- Dark Navbar Dropdown --- */
+.dark .navbar__dropdown {
+  background: #151929;
+  border-color: #1e293b;
+}
+
+/* --- Dark Toast --- */
+.dark .toast {
+  background: #151929;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+/* --- Dark Modal --- */
+.dark .modal {
+  background: #151929;
+}
+
+.dark .modal__header,
+.dark .modal__footer {
+  border-color: #1e293b;
+}
+
+/* --- Dark Page Banner --- */
+.dark .page-banner {
+  background: linear-gradient(135deg, #070a12 0%, #0f172a 100%);
+}

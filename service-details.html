@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himalayan Mountain Pass Tour - RideOn Service Details</title>
+  <meta name="description" content="Experience the ultimate 5-day guided motorcycle tour through the Himalayan mountain passes. Includes bike, gear, accommodation, and expert guide." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body">
+  <nav class="navbar" id="mainNavbar"><div class="navbar__container"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link navbar__link--active">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+          <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+        </li>
+      </ul>
+      <div class="navbar__actions"><button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button><button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button><a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a><a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a><button class="navbar__toggle" id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" class="w-6 h-6 icon-menu"></i><i data-lucide="x" class="w-6 h-6 icon-close" style="display:none;"></i></button></div></div></nav>
+
+  <section class="page-banner"><div class="page-banner__container"><h1 class="page-banner__title animate-on-scroll">Service Details</h1><div class="page-banner__breadcrumb animate-on-scroll" data-delay="100"><a href="index.html">Home</a><i data-lucide="chevron-right" class="w-4 h-4"></i><a href="services.html">Services</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span class="text-primary">Mountain Pass Tour</span></div></div></section>
+
+  <section class="section">
+    <div class="section__container">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <!-- Gallery -->
+          <div class="animate-on-scroll mb-8">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=450&fit=crop" alt="Himalayan Mountain Pass" class="w-full h-[400px] object-cover rounded-2xl shadow-lg mb-4" id="mainImage" />
+            <div class="grid grid-cols-4 gap-3">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=150&fit=crop" alt="" class="w-full h-20 object-cover rounded-lg cursor-pointer opacity-100 border-2 border-primary hover:opacity-100 transition-opacity" onclick="document.getElementById('mainImage').src=this.src.replace('200','900').replace('150','450')" />
+              <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=200&h=150&fit=crop" alt="" class="w-full h-20 object-cover rounded-lg cursor-pointer opacity-60 hover:opacity-100 transition-opacity" onclick="document.getElementById('mainImage').src=this.src.replace('200','900').replace('150','450'); " />
+              <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=200&h=150&fit=crop" alt="" class="w-full h-20 object-cover rounded-lg cursor-pointer opacity-60 hover:opacity-100 transition-opacity" onclick="document.getElementById('mainImage').src=this.src.replace('200','900').replace('150','450')" />
+              <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=200&h=150&fit=crop" alt="" class="w-full h-20 object-cover rounded-lg cursor-pointer opacity-60 hover:opacity-100 transition-opacity" onclick="document.getElementById('mainImage').src=this.src.replace('200','900').replace('150','450')" />
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="animate-on-scroll">
+            <h2 class="font-heading text-2xl md:text-3xl font-800 mb-4" style="color: var(--text-heading);">Himalayan Mountain Pass Tour</h2>
+            <div class="flex flex-wrap gap-4 mb-6">
+              <span class="flex items-center gap-1.5 text-sm text-slate-500"><i data-lucide="clock" class="w-4 h-4 text-primary"></i> 5 Days / 4 Nights</span>
+              <span class="flex items-center gap-1.5 text-sm text-slate-500"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> 480 km Total</span>
+              <span class="flex items-center gap-1.5 text-sm text-slate-500"><i data-lucide="users" class="w-4 h-4 text-primary"></i> Max 8 Riders</span>
+              <span class="flex items-center gap-1.5 text-sm text-slate-500"><i data-lucide="mountain" class="w-4 h-4 text-primary"></i> 5,300m Altitude</span>
+            </div>
+            <div class="flex items-center gap-2 mb-6">
+              <div class="flex gap-0.5"><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i></div>
+              <span class="text-sm text-slate-500">5.0 (48 reviews)</span>
+            </div>
+            <div class="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <p>Conquer the highest motorable roads in the world on this epic 5-day guided motorcycle tour through the Himalayas. Ride through the legendary Leh-Manali highway, cross five mountain passes above 4,000 meters, and experience breathtaking valley views, ancient monasteries, and rugged terrain that will test your skills and reward your spirit.</p>
+              <p>Our experienced guides have led hundreds of riders through these routes. Every detail is taken care of—from your bike and safety gear to comfortable overnight stays and warm meals at altitude. A support vehicle follows the group for complete peace of mind.</p>
+            </div>
+          </div>
+
+          <!-- Itinerary -->
+          <div class="mt-10 animate-on-scroll">
+            <h3 class="font-heading text-xl font-700 mb-6" style="color: var(--text-heading);">Tour Itinerary</h3>
+            <div class="space-y-4">
+              <div class="card p-5 border-l-4 border-primary"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 font-heading font-700 text-primary text-sm">D1</div><div><h4 class="font-heading font-700 text-sm mb-1" style="color: var(--text-heading);">Arrival & Briefing</h4><p class="text-sm text-slate-500">Arrive at base camp, meet your guide, bike handover, safety briefing, and gear fitting. Welcome dinner.</p></div></div></div>
+              <div class="card p-5 border-l-4 border-accent"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 font-heading font-700 text-accent text-sm">D2</div><div><h4 class="font-heading font-700 text-sm mb-1" style="color: var(--text-heading);">Base Camp → Keylong (120 km)</h4><p class="text-sm text-slate-500">Cross the Rohtang Pass at 3,978m. Stunning views of glaciers and alpine meadows. Overnight at Keylong.</p></div></div></div>
+              <div class="card p-5 border-l-4 border-blue-500"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 font-heading font-700 text-blue-500 text-sm">D3</div><div><h4 class="font-heading font-700 text-sm mb-1" style="color: var(--text-heading);">Keylong → Sarchu (110 km)</h4><p class="text-sm text-slate-500">Ride through Baralacha La (4,890m). The most challenging and rewarding day with river crossings and high-altitude plains.</p></div></div></div>
+              <div class="card p-5 border-l-4 border-purple-500"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 font-heading font-700 text-purple-500 text-sm">D4</div><div><h4 class="font-heading font-700 text-sm mb-1" style="color: var(--text-heading);">Sarchu → Leh (130 km)</h4><p class="text-sm text-slate-500">Cross Tanglang La (5,328m). Descend into the moonscape of Ladakh. Arrive at Leh for celebration dinner.</p></div></div></div>
+              <div class="card p-5 border-l-4 border-yellow-500"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0 font-heading font-700 text-yellow-500 text-sm">D5</div><div><h4 class="font-heading font-700 text-sm mb-1" style="color: var(--text-heading);">Departure Day</h4><p class="text-sm text-slate-500">Optional monastery visit, drone footage review, photo sharing, and farewell. Transfer to airport.</p></div></div></div>
+            </div>
+          </div>
+
+          <!-- What's Included -->
+          <div class="mt-10 animate-on-scroll">
+            <h3 class="font-heading text-xl font-700 mb-6" style="color: var(--text-heading);">What's Included</h3>
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Adventure motorcycle (BMW GS / KTM)</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Full riding gear & safety equipment</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> 4 nights accommodation</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> All meals included</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Expert riding guide</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Support vehicle & mechanic</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Professional photography & drone footage</div>
+              <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><i data-lucide="check-circle" class="w-4 h-4 text-accent flex-shrink-0"></i> Comprehensive insurance</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Booking -->
+        <div class="lg:col-span-1">
+          <div class="card p-6 sticky top-24 animate-on-scroll">
+            <div class="text-center mb-6">
+              <span class="text-sm text-slate-400">Starting from</span>
+              <div class="font-heading text-4xl font-900 text-primary mt-1">$899</div>
+              <span class="text-sm text-slate-500">per person</span>
+            </div>
+
+            <form data-validate>
+              <div class="form-group"><label class="form-label">Select Date</label><input type="date" class="form-input" required /><p class="form-error"></p></div>
+              <div class="form-group"><label class="form-label">Number of Riders</label><select class="form-input" required><option value="">Select</option><option>1 Rider</option><option>2 Riders</option><option>3 Riders</option><option>4 Riders</option><option>5+ Riders</option></select><p class="form-error"></p></div>
+              <div class="form-group"><label class="form-label">Bike Preference</label><select class="form-input"><option>BMW GS 1250</option><option>KTM 390 Adventure</option><option>Royal Enfield Himalayan</option></select></div>
+              <button type="submit" class="btn btn--primary w-full btn--lg mb-3"><i data-lucide="calendar-check" class="w-5 h-5"></i> Book This Tour</button>
+              <button type="button" class="btn btn--outline w-full" onclick="showToast('Added to wishlist!', 'success')"><i data-lucide="heart" class="w-4 h-4"></i> Add to Wishlist</button>
+            </form>
+
+            <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700 space-y-3">
+              <div class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="shield-check" class="w-4 h-4 text-accent"></i> Free cancellation up to 48h</div>
+              <div class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="credit-card" class="w-4 h-4 text-accent"></i> Secure payment</div>
+              <div class="flex items-center gap-2 text-sm text-slate-500"><i data-lucide="headphones" class="w-4 h-4 text-accent"></i> 24/7 support</div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+              <h4 class="font-heading font-700 text-sm mb-3" style="color: var(--text-heading);">Tour Guide</h4>
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=48&h=48&fit=crop&crop=face" class="w-11 h-11 rounded-full" alt="Marcus Chen" />
+                <div><div class="font-heading font-700 text-sm" style="color: var(--text-heading);">Marcus Chen</div><div class="text-xs text-slate-500">Lead Adventure Guide</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="footer__grid"><div><a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><p class="footer__brand-text">Premium bike rentals and curated guided tours.</p></div><div><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Our Bikes</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li><li><a href="blog.html" class="footer__link">Blog</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div><div><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="services.html" class="footer__link">Bike Rentals</a></li><li><a href="services.html" class="footer__link">Guided Tours</a></li></ul></div><div><h4 class="footer__heading">Contact</h4><div class="space-y-3"><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p></div></div></div><div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p><div class="footer__bottom-links"></div></div></div></footer>
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+  <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

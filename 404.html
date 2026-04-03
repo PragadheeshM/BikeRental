@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | RideOn</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Let's get you back on track." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="font-body min-h-screen flex flex-col" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+  <!-- Minimal Nav -->
+  <div class="p-6"><a href="index.html" class="navbar__logo inline-flex" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a></div>
+
+  <div class="flex-1 flex items-center justify-center px-6">
+    <div class="text-center max-w-lg animate-on-scroll">
+      <!-- Decorative -->
+      <div class="relative mb-8">
+        <div class="font-heading text-[10rem] md:text-[14rem] font-900 leading-none text-transparent bg-clip-text bg-gradient-to-b from-primary/30 to-transparent select-none">404</div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center" style="animation: float 4s ease-in-out infinite;">
+            <i data-lucide="map-pin-off" class="w-12 h-12 text-primary"></i>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="font-heading text-3xl md:text-4xl font-800 text-white mb-4">Wrong Turn!</h1>
+      <p class="text-slate-400 text-lg mb-8 leading-relaxed">Looks like you've taken a detour. The page you're looking for doesn't exist or has been moved. Let's get you back on the road.</p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="index.html" class="btn btn--primary btn--lg"><i data-lucide="home" class="w-5 h-5"></i> Go Home</a>
+        <a href="contact.html" class="btn btn--lg border-2 border-slate-600 text-white hover:border-primary hover:text-primary bg-transparent">Contact Support</a>
+      </div>
+
+      <p class="text-sm text-slate-500">Or try these popular pages:</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-3">
+        <a href="services.html" class="text-sm text-primary hover:underline">Browse Bikes</a>
+        <span class="text-slate-600">•</span>
+        <a href="pricing.html" class="text-sm text-primary hover:underline">Pricing</a>
+        <span class="text-slate-600">•</span>
+        <a href="blog.html" class="text-sm text-primary hover:underline">Blog</a>
+        <span class="text-slate-600">•</span>
+        <a href="about.html" class="text-sm text-primary hover:underline">About Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
