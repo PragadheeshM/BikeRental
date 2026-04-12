@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RideOn - Premium Bike Rentals & Guided Tours</title>
-  <meta name="description" content="Explore the world on two wheels. RideOn offers premium bike rentals, scooters, adventure motorcycles, and curated guided tours for unforgettable riding experiences." />
+  <meta name="description"
+    content="Explore the world on two wheels. RideOn offers premium bike rentals, scooters, adventure motorcycles, and curated guided tours for unforgettable riding experiences." />
   <meta name="keywords" content="bike rental, motorcycle tour, scooter rental, guided tours, adventure rides, travel" />
   <meta property="og:title" content="RideOn - Premium Bike Rentals & Guided Tours" />
-  <meta property="og:description" content="Explore the world on two wheels with premium rentals and curated guided tours." />
+  <meta property="og:description"
+    content="Explore the world on two wheels with premium rentals and curated guided tours." />
   <meta property="og:type" content="website" />
 
   <!-- Tailwind CSS CDN -->
@@ -41,6 +44,7 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
+
 <body class="font-body">
 
   <!-- ============================================
@@ -63,8 +67,8 @@
             Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
           </a>
           <ul class="navbar__dropdown">
-            <li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li>
-            <li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li>
+            <li><a href="index.html" class="navbar__dropdown-link">Home 1</a></li>
+            <li><a href="index-niche.html" class="navbar__dropdown-link">Home 2</a></li>
           </ul>
         </li>
         <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
@@ -89,10 +93,12 @@
           </ul>
         </li>
         <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
-      
-        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+
+        <li
+          class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
           <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
-          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign
+            Up</a>
         </li>
       </ul>
       <div class="navbar__actions">
@@ -120,44 +126,55 @@
   <!-- ============================================
        HERO SECTION
        ============================================ -->
-  <section class="relative overflow-hidden min-h-[92vh] flex items-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);">
+  <section class="relative overflow-hidden min-h-[95vh] flex items-center">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <img src="assets/img/hero-bg.png" alt="Hero background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/40 to-secondary/90"></div>
+    </div>
+    
     <!-- Decorative elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-20"></div>
     </div>
 
     <!-- Grid pattern overlay -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <div class="section__container relative z-10 py-20">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div class="animate-on-scroll text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 mx-auto lg:mx-0">
+    <div class="section__container relative z-10 py-20 text-center">
+      <div class="max-w-4xl mx-auto">
+        <!-- Content -->
+        <div class="animate-on-scroll">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 mx-auto">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span class="text-primary font-semibold text-sm tracking-wide">PREMIUM BIKE RENTALS & TOURS</span>
           </div>
-          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-900 text-white leading-[1.1] mb-6">
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-7xl font-900 text-white leading-[1.1] mb-6">
             Explore the World
-            <span class="block mt-2">on <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Two Wheels</span></span>
+            <span class="block mt-2">on <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Two
+                Wheels</span></span>
           </h1>
-          <p class="text-slate-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
-            From city cruisers to adventure motorcycles, find your perfect ride. Book premium rentals and join curated guided tours to discover hidden gems.
+          <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            From city cruisers to adventure motorcycles, find your perfect ride. Book premium rentals and join curated
+            guided tours to discover hidden gems.
           </p>
-          <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
-            <a href="services.html" class="btn btn--primary btn--lg group">
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <a href="services.html" class="btn btn--primary btn--lg group px-10">
               Browse Bikes
               <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
             </a>
-            <a href="pricing.html" class="btn btn--lg border-2 border-slate-600 text-white hover:border-primary hover:text-primary bg-transparent">
+            <a href="pricing.html"
+              class="btn btn--lg border-2 border-slate-600 text-white hover:border-primary hover:text-primary bg-transparent px-10">
               View Plans
             </a>
           </div>
 
           <!-- Stats -->
-          <div class="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+          <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-16 border-t border-white/10 pt-8">
             <div>
               <div class="font-heading text-3xl font-800 text-white">500<span class="text-primary">+</span></div>
               <div class="text-slate-500 text-sm mt-1">Bikes Available</div>
@@ -173,31 +190,37 @@
           </div>
         </div>
 
-        <!-- Right Image -->
-        <div class="animate-on-scroll relative" data-delay="200">
-          <div class="relative">
-            <img src="https://images.unsplash.com/photo-1558981420-c532902e58b4?w=700&h=500&fit=crop" alt="Adventure motorcycle on scenic road" class="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
-            <!-- Floating card -->
-            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll" data-delay="500" style="backdrop-filter: blur(10px);">
+        <!-- Featured Image below content -->
+        <div class="animate-on-scroll relative max-w-3xl mx-auto" data-delay="200">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <img src="https://images.unsplash.com/photo-1558981420-c532902e58b4?w=1000&h=500&fit=crop"
+              alt="Adventure motorcycle on scenic road" class="relative rounded-2xl shadow-2xl w-full object-cover h-[350px] md:h-[450px]" />
+            
+            <!-- Floating cards (centered better) -->
+            <div
+              class="absolute -bottom-6 -left-4 md:-left-8 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
+              data-delay="500" style="backdrop-filter: blur(10px);">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <i data-lucide="shield-check" class="w-6 h-6 text-accent"></i>
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <i data-lucide="shield-check" class="w-5 h-5 md:w-6 md:h-6 text-accent"></i>
                 </div>
-                <div>
-                  <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Fully Insured</div>
-                  <div class="text-slate-500 text-xs">All rides covered</div>
+                <div class="text-left">
+                  <div class="font-heading font-700 text-xs md:text-sm text-slate-900 dark:text-white">Fully Insured</div>
+                  <div class="text-slate-500 text-[10px] md:text-xs">All rides covered</div>
                 </div>
               </div>
             </div>
-            <!-- Floating card 2 -->
-            <div class="absolute -top-4 -right-4 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll" data-delay="700" style="backdrop-filter: blur(10px);">
+            <div
+              class="absolute -top-4 -right-4 md:-right-8 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
+              data-delay="700" style="backdrop-filter: blur(10px);">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <i data-lucide="star" class="w-6 h-6 text-primary"></i>
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <i data-lucide="star" class="w-5 h-5 md:w-6 md:h-6 text-primary"></i>
                 </div>
-                <div>
-                  <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">4.9 Rating</div>
-                  <div class="text-slate-500 text-xs">2,400+ reviews</div>
+                <div class="text-left">
+                  <div class="font-heading font-700 text-xs md:text-sm text-slate-900 dark:text-white">4.9 Rating</div>
+                  <div class="text-slate-500 text-[10px] md:text-xs">2,400+ reviews</div>
                 </div>
               </div>
             </div>
@@ -212,7 +235,8 @@
        ============================================ -->
   <section class="relative z-20 -mt-10">
     <div class="section__container">
-      <div class="bg-white dark:bg-surface-dark rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 p-6 md:p-8 animate-on-scroll">
+      <div
+        class="bg-white dark:bg-surface-dark rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 p-6 md:p-8 animate-on-scroll">
         <div class="grid md:grid-cols-4 gap-4 items-end">
           <div>
             <label class="form-label">Pickup Location</label>
@@ -261,44 +285,53 @@
           WHY CHOOSE US
         </span>
         <h2 class="section__title">The Smart Way to Rent & Ride</h2>
-        <p class="section__subtitle">We make bike rentals effortless. From booking to returning, every step is designed for your convenience and safety.</p>
+        <p class="section__subtitle">We make bike rentals effortless. From booking to returning, every step is designed
+          for your convenience and safety.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Feature 1 -->
         <div class="card p-6 text-center animate-on-scroll" data-delay="0">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4">
             <i data-lucide="clock" class="w-7 h-7 text-primary"></i>
           </div>
           <h3 class="card__title text-center">Instant Booking</h3>
-          <p class="card__text text-center">Book your ride in under 60 seconds with our streamlined reservation system. No paperwork needed.</p>
+          <p class="card__text text-center">Book your ride in under 60 seconds with our streamlined reservation system.
+            No paperwork needed.</p>
         </div>
 
         <!-- Feature 2 -->
         <div class="card p-6 text-center animate-on-scroll" data-delay="100">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4">
             <i data-lucide="shield-check" class="w-7 h-7 text-accent"></i>
           </div>
           <h3 class="card__title text-center">Full Insurance</h3>
-          <p class="card__text text-center">Every rental includes comprehensive insurance coverage. Ride worry-free on every adventure.</p>
+          <p class="card__text text-center">Every rental includes comprehensive insurance coverage. Ride worry-free on
+            every adventure.</p>
         </div>
 
         <!-- Feature 3 -->
         <div class="card p-6 text-center animate-on-scroll" data-delay="200">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/10 to-blue-500/5 flex items-center justify-center mb-4">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-blue-500/10 to-blue-500/5 flex items-center justify-center mb-4">
             <i data-lucide="map" class="w-7 h-7 text-blue-500"></i>
           </div>
           <h3 class="card__title text-center">Guided Tours</h3>
-          <p class="card__text text-center">Join expert-led tours through scenic routes, hidden gems, and iconic landmarks across the region.</p>
+          <p class="card__text text-center">Join expert-led tours through scenic routes, hidden gems, and iconic
+            landmarks across the region.</p>
         </div>
 
         <!-- Feature 4 -->
         <div class="card p-6 text-center animate-on-scroll" data-delay="300">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-500/5 flex items-center justify-center mb-4">
+          <div
+            class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-500/5 flex items-center justify-center mb-4">
             <i data-lucide="headphones" class="w-7 h-7 text-purple-500"></i>
           </div>
           <h3 class="card__title text-center">24/7 Support</h3>
-          <p class="card__text text-center">Roadside assistance and customer support available round the clock for your peace of mind.</p>
+          <p class="card__text text-center">Roadside assistance and customer support available round the clock for your
+            peace of mind.</p>
         </div>
       </div>
     </div>
@@ -315,7 +348,8 @@
           POPULAR RIDES
         </span>
         <h2 class="section__title">Our Most Popular Bikes</h2>
-        <p class="section__subtitle">Hand-picked selection of our top-rated bikes. All well-maintained, safety-checked, and ready for your next adventure.</p>
+        <p class="section__subtitle">Hand-picked selection of our top-rated bikes. All well-maintained, safety-checked,
+          and ready for your next adventure.</p>
       </div>
 
       <!-- Filter tabs -->
@@ -331,18 +365,22 @@
         <!-- Bike 1 -->
         <div class="card animate-on-scroll" data-category="cruiser" data-delay="0">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&h=400&fit=crop" alt="Royal Enfield Classic 350" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&h=400&fit=crop"
+              alt="Royal Enfield Classic 350"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge">City Cruiser</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">Royal Enfield Classic 350</h3>
-            <p class="card__text">Perfect blend of vintage style and modern reliability. Ideal for city riding and short weekend getaways.</p>
+            <p class="card__text">Perfect blend of vintage style and modern reliability. Ideal for city riding and short
+              weekend getaways.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 350cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 35 km/l</span>
@@ -351,25 +389,30 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$25 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('Royal Enfield Classic 350 added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm"
+              onclick="showToast('Royal Enfield Classic 350 added to cart!', 'success')">Book Now</button>
           </div>
         </div>
 
         <!-- Bike 2 -->
         <div class="card animate-on-scroll" data-category="sport" data-delay="100">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&h=400&fit=crop" alt="Kawasaki Ninja 650" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&h=400&fit=crop"
+              alt="Kawasaki Ninja 650"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge bg-red-500/10 text-red-500">Sport Bike</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">Kawasaki Ninja 650</h3>
-            <p class="card__text">Exhilarating performance meets everyday comfort. A sport bike that's perfect for thrill-seekers and daily commuters alike.</p>
+            <p class="card__text">Exhilarating performance meets everyday comfort. A sport bike that's perfect for
+              thrill-seekers and daily commuters alike.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 649cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 21 km/l</span>
@@ -378,25 +421,30 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$55 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('Kawasaki Ninja 650 added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm"
+              onclick="showToast('Kawasaki Ninja 650 added to cart!', 'success')">Book Now</button>
           </div>
         </div>
 
         <!-- Bike 3 -->
         <div class="card animate-on-scroll" data-category="adventure" data-delay="200">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=400&fit=crop" alt="BMW GS 1250 Adventure" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=400&fit=crop"
+              alt="BMW GS 1250 Adventure"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge bg-accent/10 text-accent">Adventure</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">BMW GS 1250 Adventure</h3>
-            <p class="card__text">The ultimate adventure companion. Built to conquer any terrain, from mountain passes to desert highways.</p>
+            <p class="card__text">The ultimate adventure companion. Built to conquer any terrain, from mountain passes
+              to desert highways.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 1254cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 17 km/l</span>
@@ -405,25 +453,30 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$95 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('BMW GS 1250 added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm" onclick="showToast('BMW GS 1250 added to cart!', 'success')">Book
+              Now</button>
           </div>
         </div>
 
         <!-- Bike 4 -->
         <div class="card animate-on-scroll" data-category="scooter" data-delay="0">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1622185135505-2d795003994a?w=600&h=400&fit=crop" alt="Vespa Primavera 150" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1622185135505-2d795003994a?w=600&h=400&fit=crop"
+              alt="Vespa Primavera 150"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge bg-violet-500/10 text-violet-500">Scooter</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">Vespa Primavera 150</h3>
-            <p class="card__text">Iconic Italian design meets fuel efficiency. The perfect companion for urban exploration and coastal rides.</p>
+            <p class="card__text">Iconic Italian design meets fuel efficiency. The perfect companion for urban
+              exploration and coastal rides.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 150cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 45 km/l</span>
@@ -432,25 +485,30 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$18 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('Vespa Primavera added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm"
+              onclick="showToast('Vespa Primavera added to cart!', 'success')">Book Now</button>
           </div>
         </div>
 
         <!-- Bike 5 -->
         <div class="card animate-on-scroll" data-category="cruiser" data-delay="100">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=600&h=400&fit=crop" alt="Harley Davidson Iron 883" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=600&h=400&fit=crop"
+              alt="Harley Davidson Iron 883"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge">City Cruiser</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">Harley Davidson Iron 883</h3>
-            <p class="card__text">Raw, stripped-down attitude with iconic Harley rumble. Own the road on this legendary American cruiser.</p>
+            <p class="card__text">Raw, stripped-down attitude with iconic Harley rumble. Own the road on this legendary
+              American cruiser.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 883cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 18 km/l</span>
@@ -459,25 +517,30 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$65 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('Harley Davidson added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm"
+              onclick="showToast('Harley Davidson added to cart!', 'success')">Book Now</button>
           </div>
         </div>
 
         <!-- Bike 6 -->
         <div class="card animate-on-scroll" data-category="adventure" data-delay="200">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=600&h=400&fit=crop" alt="KTM 390 Adventure" class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=600&h=400&fit=crop"
+              alt="KTM 390 Adventure"
+              class="card__image w-full h-56 object-cover transition-transform duration-500 hover:scale-110" />
             <div class="absolute top-4 left-4">
               <span class="card__badge bg-accent/10 text-accent">Adventure</span>
             </div>
-            <div class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
+            <div
+              class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
               <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
             </div>
           </div>
           <div class="card__body">
             <h3 class="card__title">KTM 390 Adventure</h3>
-            <p class="card__text">Lightweight, agile, and adventure-ready. Perfect for riders who want versatility without compromise on trails.</p>
+            <p class="card__text">Lightweight, agile, and adventure-ready. Perfect for riders who want versatility
+              without compromise on trails.</p>
             <div class="flex items-center gap-4 mt-3 text-sm text-slate-500">
               <span class="flex items-center gap-1"><i data-lucide="gauge" class="w-4 h-4"></i> 373cc</span>
               <span class="flex items-center gap-1"><i data-lucide="fuel" class="w-4 h-4"></i> 28 km/l</span>
@@ -486,7 +549,8 @@
           </div>
           <div class="card__footer">
             <div class="card__price">$38 <span>/ day</span></div>
-            <button class="btn btn--primary btn--sm" onclick="showToast('KTM 390 added to cart!', 'success')">Book Now</button>
+            <button class="btn btn--primary btn--sm" onclick="showToast('KTM 390 added to cart!', 'success')">Book
+              Now</button>
           </div>
         </div>
       </div>
@@ -511,38 +575,47 @@
           HOW IT WORKS
         </span>
         <h2 class="section__title">Rent a Bike in 3 Easy Steps</h2>
-        <p class="section__subtitle">Our streamlined process gets you on the road faster. No long queues, no complicated paperwork.</p>
+        <p class="section__subtitle">Our streamlined process gets you on the road faster. No long queues, no complicated
+          paperwork.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 relative">
         <!-- Connector line -->
-        <div class="hidden md:block absolute top-20 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20"></div>
+        <div
+          class="hidden md:block absolute top-20 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20">
+        </div>
 
         <!-- Step 1 -->
         <div class="text-center animate-on-scroll relative" data-delay="0">
-          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
             01
           </div>
           <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Choose Your Ride</h3>
-          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Browse our collection of bikes, scooters, and motorcycles. Filter by type, price, and availability.</p>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Browse our collection of bikes, scooters,
+            and motorcycles. Filter by type, price, and availability.</p>
         </div>
 
         <!-- Step 2 -->
         <div class="text-center animate-on-scroll relative" data-delay="150">
-          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
             02
           </div>
           <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Book & Pay Online</h3>
-          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Secure your booking instantly with our safe payment system. Choose your dates and pickup location.</p>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Secure your booking instantly with our safe
+            payment system. Choose your dates and pickup location.</p>
         </div>
 
         <!-- Step 3 -->
         <div class="text-center animate-on-scroll relative" data-delay="300">
-          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+          <div
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
             03
           </div>
           <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Hit the Road!</h3>
-          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Pick up your bike, gear up with our free safety equipment, and experience the ride of a lifetime!</p>
+          <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Pick up your bike, gear up with our free
+            safety equipment, and experience the ride of a lifetime!</p>
         </div>
       </div>
     </div>
@@ -551,7 +624,8 @@
   <!-- ============================================
        GUIDED TOURS CTA
        ============================================ -->
-  <section class="relative overflow-hidden py-24" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+  <section class="relative overflow-hidden py-24"
+    style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
@@ -560,7 +634,8 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Image -->
         <div class="animate-slide-left">
-          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=450&fit=crop" alt="Group motorcycle tour through mountains" class="rounded-2xl shadow-2xl" />
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=450&fit=crop"
+            alt="Group motorcycle tour through mountains" class="rounded-2xl shadow-2xl" />
         </div>
 
         <!-- Content -->
@@ -569,9 +644,11 @@
             <i data-lucide="compass" class="w-4 h-4"></i>
             GUIDED TOURS
           </span>
-          <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-6 leading-tight">Discover Unforgettable Routes with Expert Guides</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-6 leading-tight">Discover Unforgettable
+            Routes with Expert Guides</h2>
           <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-            Join our curated adventure tours led by experienced local guides. From coastal highways to mountain passes, we craft journeys that become lasting memories.
+            Join our curated adventure tours led by experienced local guides. From coastal highways to mountain passes,
+            we craft journeys that become lasting memories.
           </p>
 
           <div class="space-y-4 mb-8">
@@ -611,6 +688,158 @@
   </section>
 
   <!-- ============================================
+       SAFETY GEAR SECTION
+       ============================================ -->
+  <section class="section">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+          SAFETY FIRST
+        </span>
+        <h2 class="section__title">Premium Gear for Every Rider</h2>
+        <p class="section__subtitle">We prioritize your safety above all else. Every rental comes with a high-quality
+          helmet, and we offer additional gear for a complete riding experience.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6 text-center animate-on-scroll">
+          <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i data-lucide="info" class="w-8 h-8 text-primary"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Smart Helmets</h3>
+          <p class="text-sm text-slate-500">DOT-certified helmets with integrated Bluetooth and superior ventilation.
+          </p>
+        </div>
+        <div class="card p-6 text-center animate-on-scroll" data-delay="100">
+          <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Body Armor</h3>
+          <p class="text-sm text-slate-500">Lightweight, breathable jackets and gloves with reinforced impact
+            protection.</p>
+        </div>
+        <div class="card p-6 text-center animate-on-scroll" data-delay="200">
+          <div class="w-16 h-16 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
+            <i data-lucide="navigation" class="w-8 h-8 text-blue-500"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">GPS Trackers</h3>
+          <p class="text-sm text-slate-500">Real-time GPS tracking and pre-loaded scenic routes on all adventure bikes.
+          </p>
+        </div>
+        <div class="card p-6 text-center animate-on-scroll" data-delay="300">
+          <div class="w-16 h-16 mx-auto rounded-full bg-purple-500/10 flex items-center justify-center mb-4">
+            <i data-lucide="heart-pulse" class="w-8 h-8 text-purple-500"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">First Aid Kits</h3>
+          <p class="text-sm text-slate-500">Compact, weather-sealed medical kits included for all long-distance tours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       POPULAR DESTINATIONS
+       ============================================ -->
+  <section class="section section--gray overflow-hidden">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+          EXPLORE THE UNKNOWN
+        </span>
+        <h2 class="section__title">Most Popular Riding Routes</h2>
+        <p class="section__subtitle">From sun-drenched coastal highways to mist-covered mountain passes, discover the
+          world's most iconic riding destinations.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group relative rounded-2xl overflow-hidden h-[400px] animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600\u0026h=800\u0026fit=crop"
+            alt="Coastal Road"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="font-heading text-xl font-800 mb-1">Pacific Coast Trail</h3>
+            <p class="text-sm text-white/70">120 Miles • Easy • Coastal</p>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden h-[400px] animate-on-scroll" data-delay="150">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600\u0026h=800\u0026fit=crop"
+            alt="Mountain Pass"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="font-heading text-xl font-800 mb-1">High Peak Pass</h3>
+            <p class="text-sm text-white/70">85 Miles • Advanced • Mountains</p>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden h-[400px] animate-on-scroll" data-delay="300">
+          <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600\u0026h=800\u0026fit=crop"
+            alt="Countryside"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="font-heading text-xl font-800 mb-1">Vintage Valley Loop</h3>
+            <p class="text-sm text-white/70">45 Miles • Moderate • Rural</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MOBILE APP CTA
+       ============================================ -->
+  <section class="section">
+    <div class="section__container">
+      <div
+        class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden relative shadow-2xl animate-on-scroll">
+        <!-- Floating bubbles for decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-24 -mt-24"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -ml-16 -mb-16"></div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center p-8 md:p-16 relative z-10">
+          <div class="order-2 lg:order-1 text-center lg:text-left">
+            <h2 class="font-heading text-3xl md:text-5xl font-900 text-white leading-tight mb-6">Adventure in Your
+              Pocket</h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed">Download the RideOn app to manage your bookings,
+              track your riding stats, and access exclusive route maps with real-time GPS guidance.</p>
+
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+              <a href="#"
+                class="btn bg-white text-slate-900 hover:bg-slate-100 border-transparent py-4 px-6 flex items-center gap-3">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+                <div class="text-left">
+                  <div class="text-[10px] uppercase font-bold leading-tight">Download on the</div>
+                  <div class="text-base font-800 leading-tight">App Store</div>
+                </div>
+              </a>
+              <a href="#"
+                class="btn bg-white text-slate-900 hover:bg-slate-100 border-transparent py-4 px-6 flex items-center gap-3">
+                <i data-lucide="play" class="w-6 h-6"></i>
+                <div class="text-left">
+                  <div class="text-[10px] uppercase font-bold leading-tight">Get it on</div>
+                  <div class="text-base font-800 leading-tight">Google Play</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 flex justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400\u0026h=600\u0026fit=crop"
+                alt="RideOn Mobile App"
+                class="relative z-10 rounded-[3rem] shadow-2xl border-8 border-slate-700 w-64 md:w-72 h-[450px] object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        TESTIMONIALS
        ============================================ -->
   <section class="section">
@@ -621,7 +850,8 @@
           TESTIMONIALS
         </span>
         <h2 class="section__title">What Our Riders Say</h2>
-        <p class="section__subtitle">Real stories from real riders. See why thousands of adventurers choose RideOn for their two-wheeled journeys.</p>
+        <p class="section__subtitle">Real stories from real riders. See why thousands of adventurers choose RideOn for
+          their two-wheeled journeys.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
@@ -634,9 +864,12 @@
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"Absolutely incredible experience! The BMW GS was in perfect condition and the coastal tour route was breathtaking. The guide knew every hidden viewpoint. Already planning my next trip!"</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"Absolutely incredible experience!
+            The BMW GS was in perfect condition and the coastal tour route was breathtaking. The guide knew every hidden
+            viewpoint. Already planning my next trip!"</p>
           <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Alex Thompson" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+              alt="Alex Thompson" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Alex Thompson</div>
               <div class="text-xs text-slate-500">Adventure Tour • March 2026</div>
@@ -653,9 +886,12 @@
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"Rented a Vespa for the weekend and explored the entire old town. The booking was seamless, pickup took 5 minutes, and the scooter was spotless. Best rental experience I've ever had!"</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"Rented a Vespa for the weekend and
+            explored the entire old town. The booking was seamless, pickup took 5 minutes, and the scooter was spotless.
+            Best rental experience I've ever had!"</p>
           <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
+              alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Sarah Chen</div>
               <div class="text-xs text-slate-500">Scooter Rental • Feb 2026</div>
@@ -672,9 +908,12 @@
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
             <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"The guided mountain tour was the highlight of my trip. Professional organization, amazing routes, and the drone footage they captured is something I'll treasure forever. 10/10!"</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">"The guided mountain tour was the
+            highlight of my trip. Professional organization, amazing routes, and the drone footage they captured is
+            something I'll treasure forever. 10/10!"</p>
           <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt="Marcus Rivera" class="w-11 h-11 rounded-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
+              alt="Marcus Rivera" class="w-11 h-11 rounded-full object-cover" />
             <div>
               <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Marcus Rivera</div>
               <div class="text-xs text-slate-500">Mountain Tour • Jan 2026</div>
@@ -696,8 +935,10 @@
           STAY UPDATED
         </span>
         <h2 class="section__title">Get Exclusive Deals & Tour Updates</h2>
-        <p class="section__subtitle mb-8">Subscribe to our newsletter for early access to new tours, seasonal discounts, and riding tips from our expert guides.</p>
-        <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); showToast('Subscribed successfully! 🎉', 'success'); this.reset();">
+        <p class="section__subtitle mb-8">Subscribe to our newsletter for early access to new tours, seasonal discounts,
+          and riding tips from our expert guides.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+          onsubmit="event.preventDefault(); showToast('Subscribed successfully! 🎉', 'success'); this.reset();">
           <input type="email" placeholder="Enter your email address" class="form-input flex-1" required />
           <button type="submit" class="btn btn--primary btn--lg">
             Subscribe
@@ -722,12 +963,30 @@
           </div>
           <span>Ride<span class="text-primary">On</span></span>
         </a>
-        <p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels with safety, comfort, and unforgettable experiences.</p>
+        <p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels
+          with safety, comfort, and unforgettable experiences.</p>
         <div class="footer__socials">
-          <a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg></a>
         </div>
       </div>
 
@@ -759,36 +1018,33 @@
       <div>
         <h4 class="footer__heading">Newsletter</h4>
         <p class="text-sm text-slate-500 mb-3">Get the latest deals and riding tips delivered to your inbox.</p>
-        <form class="footer__newsletter" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.querySelector('input').value='';">
+        <form class="footer__newsletter"
+          onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.querySelector('input').value='';">
           <input type="email" placeholder="Your email" class="footer__newsletter-input" required />
           <button type="submit" class="btn btn--primary btn--sm">
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
         </form>
         <div class="mt-4 space-y-2">
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p>
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p>
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone"
+              class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail"
+              class="w-4 h-4 text-primary"></i> hello@rideon.com</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin"
+              class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p>
         </div>
       </div>
     </div>
 
     <!-- Bottom bar -->
-    <div class="footer__bottom">
-      <div class="footer__bottom-inner">
-        <p>&copy; 2026 RideOn. All rights reserved.</p>
-        <div class="footer__bottom-links">
-          
-          <a href="contact.html">Support</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p></div></div></footer>
 
   <!-- ============================================
        BACK TO TOP BUTTON
        ============================================ -->
-  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" style="transition: all 0.3s ease;" aria-label="Back to top">
+  <button id="backToTop"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50"
+    style="transition: all 0.3s ease;" aria-label="Back to top">
     <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
 
@@ -813,23 +1069,30 @@
       </div>
       <div class="modal__body">
         <div class="grid md:grid-cols-2 gap-6">
-          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=400&h=300&fit=crop" alt="Bike preview" class="rounded-xl w-full h-48 md:h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=400&h=300&fit=crop" alt="Bike preview"
+            class="rounded-xl w-full h-48 md:h-full object-cover" />
           <div>
             <span class="card__badge mb-3 inline-block">City Cruiser</span>
             <h4 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-2">Royal Enfield Classic 350</h4>
-            <p class="text-sm text-slate-500 mb-4 leading-relaxed">A timeless classic that combines vintage aesthetics with modern engineering. Perfect for city exploration and scenic countryside rides.</p>
+            <p class="text-sm text-slate-500 mb-4 leading-relaxed">A timeless classic that combines vintage aesthetics
+              with modern engineering. Perfect for city exploration and scenic countryside rides.</p>
             <div class="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-6">
-              <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-primary"></i> Engine: 349cc, Single Cylinder</div>
-              <div class="flex items-center gap-2"><i data-lucide="fuel" class="w-4 h-4 text-primary"></i> Mileage: 35 km/l</div>
-              <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-primary"></i> Insurance: Included</div>
-              <div class="flex items-center gap-2"><i data-lucide="helmet" class="w-4 h-4 text-primary"></i> Helmet: Free</div>
+              <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-primary"></i> Engine:
+                349cc, Single Cylinder</div>
+              <div class="flex items-center gap-2"><i data-lucide="fuel" class="w-4 h-4 text-primary"></i> Mileage: 35
+                km/l</div>
+              <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-primary"></i>
+                Insurance: Included</div>
+              <div class="flex items-center gap-2"><i data-lucide="helmet" class="w-4 h-4 text-primary"></i> Helmet:
+                Free</div>
             </div>
             <div class="flex items-end justify-between">
               <div>
                 <span class="text-xs text-slate-400">Starting from</span>
                 <div class="card__price">$25 <span>/ day</span></div>
               </div>
-              <button class="btn btn--primary" onclick="showToast('Added to cart!', 'success'); closeModal('quickViewModal');">Book Now</button>
+              <button class="btn btn--primary"
+                onclick="showToast('Added to cart!', 'success'); closeModal('quickViewModal');">Book Now</button>
             </div>
           </div>
         </div>
@@ -848,14 +1111,14 @@
       var cards = document.querySelectorAll('#bikeGrid .card');
       var buttons = btn.parentElement.querySelectorAll('.btn');
 
-      buttons.forEach(function(b) {
+      buttons.forEach(function (b) {
         b.classList.remove('btn--primary');
         b.classList.add('btn--ghost');
       });
       btn.classList.remove('btn--ghost');
       btn.classList.add('btn--primary');
 
-      cards.forEach(function(card) {
+      cards.forEach(function (card) {
         if (category === 'all' || card.dataset.category === category) {
           card.style.display = '';
           card.style.animation = 'fadeIn 0.4s ease forwards';
@@ -867,9 +1130,18 @@
   </script>
   <style>
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </body>
+
 </html>
+

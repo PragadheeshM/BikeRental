@@ -120,3 +120,82 @@
     flex-direction: column;
   }
 }
+
+/* --- Dashboard RTL --- */
+[dir="rtl"] .dashboard__sidebar {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .dashboard__main {
+  margin-left: 0 !important;
+  margin-right: 260px !important;
+}
+
+[dir="rtl"] .dashboard__topbar .border-l {
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .dashboard__sidebar-link i[data-lucide^="arrow-left"] {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .dashboard__sidebar {
+    transform: translateX(100%) !important;
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  [dir="rtl"] .dashboard__sidebar--open {
+    transform: translateX(0) !important;
+  }
+
+  [dir="rtl"] .dashboard__main {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* --- Icon RTL Flips --- */
+[dir="rtl"] .lucide-chevron-right,
+[dir="rtl"] .lucide-chevron-left,
+[dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] .lucide-arrow-left,
+[dir="rtl"] .navbar__link i[data-lucide="chevron-down"] {
+  transform: scaleX(-1);
+}
+
+/* --- Tailwind Utility RTL Overrides --- */
+[dir="rtl"] .pl-3 { padding-left: 0 !important; padding-right: 0.75rem !important; }
+[dir="rtl"] .pr-3 { padding-right: 0 !important; padding-left: 0.75rem !important; }
+[dir="rtl"] .pl-10 { padding-left: 0 !important; padding-right: 2.5rem !important; }
+[dir="rtl"] .left-3 { left: auto !important; right: 0.75rem !important; }
+[dir="rtl"] .right-3 { right: auto !important; left: 0.75rem !important; }
+[dir="rtl"] .border-l { border-left: none !important; border-right-width: 1px !important; }
+[dir="rtl"] .border-r { border-right: none !important; border-left-width: 1px !important; }
+[dir="rtl"] .ml-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
+[dir="rtl"] .mr-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+
+/* --- Gradient Flips --- */
+[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops)) !important;
+}
+[dir="rtl"] .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops)) !important;
+}
+
+/* --- Back to Top RTL --- */
+[dir="rtl"] #backToTop {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* --- Login/Register Utilities RTL --- */
+[dir="rtl"] .card-utilities {
+  right: auto !important;
+  left: -0.5rem !important;
+}

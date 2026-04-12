@@ -13,7 +13,7 @@
 </head>
 <body class="font-body">
   <!-- NAVBAR -->
-  <nav class="navbar" id="mainNavbar"><div class="navbar__container"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+  <nav class="navbar" id="mainNavbar"><div class="navbar__container"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Home 1</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Home 2</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
           <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
           <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
@@ -153,7 +153,91 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer"><div class="footer__grid"><div><a href="index.html" class="navbar__logo" style="color:white;"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span class="text-primary">On</span></span></a><p class="footer__brand-text">Premium bike rentals and curated guided tours.</p></div><div><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Our Bikes</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li><li><a href="blog.html" class="footer__link">Blog</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div><div><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="services.html" class="footer__link">Bike Rentals</a></li><li><a href="services.html" class="footer__link">Guided Tours</a></li></ul></div><div><h4 class="footer__heading">Contact</h4><div class="space-y-3"><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p><p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p></div></div></div><div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p><div class="footer__bottom-links"></div></div></div></footer>
+    <footer class="footer">
+    <div class="footer__grid">
+      <!-- Brand -->
+      <div>
+        <a href="index.html" class="navbar__logo" style="color: white;">
+          <div class="navbar__logo-icon">
+            <i data-lucide="bike" class="w-5 h-5"></i>
+          </div>
+          <span>Ride<span class="text-primary">On</span></span>
+        </a>
+        <p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels
+          with safety, comfort, and unforgettable experiences.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="services.html" class="footer__link">Our Bikes</a></li>
+          <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+          <li><a href="blog.html" class="footer__link">Blog</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="footer__heading">Services</h4>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Bike Rentals</a></li>
+          <li><a href="services.html" class="footer__link">Guided Tours</a></li>
+          <li><a href="services.html" class="footer__link">Corporate Events</a></li>
+          <li><a href="services.html" class="footer__link">Airport Pickup</a></li>
+          <li><a href="services.html" class="footer__link">Safety Gear</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h4 class="footer__heading">Newsletter</h4>
+        <p class="text-sm text-slate-500 mb-3">Get the latest deals and riding tips delivered to your inbox.</p>
+        <form class="footer__newsletter"
+          onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.querySelector('input').value='';">
+          <input type="email" placeholder="Your email" class="footer__newsletter-input" required />
+          <button type="submit" class="btn btn--primary btn--sm">
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+        <div class="mt-4 space-y-2">
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone"
+              class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail"
+              class="w-4 h-4 text-primary"></i> hello@rideon.com</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin"
+              class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p></div></div></footer>
   <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
   <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
   <div class="toast-container"></div>

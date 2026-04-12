@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RideOn - Adventure Awaits | Guided Motorcycle Tours</title>
-  <meta name="description" content="Join the ultimate motorcycle adventure. Curated guided tours through scenic routes, mountain passes, and coastal highways. Book your next unforgettable ride." />
+  <meta name="description"
+    content="Join the ultimate motorcycle adventure. Curated guided tours through scenic routes, mountain passes, and coastal highways. Book your next unforgettable ride." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,7 +19,7 @@
             accent: { DEFAULT: '#10b981', light: '#34d399', dark: '#059669' },
             surface: { DEFAULT: '#ffffff', dark: '#151929', darker: '#0c0f1a' }
           },
-          fontFamily: { heading: ['Outfit','sans-serif'], body: ['Inter','sans-serif'] }
+          fontFamily: { heading: ['Outfit', 'sans-serif'], body: ['Inter', 'sans-serif'] }
         }
       }
     };
@@ -28,6 +30,7 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
+
 <body class="font-body">
 
   <!-- NAVBAR -->
@@ -37,10 +40,37 @@
         <div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div>
         <span>Ride<span class="text-primary">On</span></span>
       </a>
-      <ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li><li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li></ul></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
-        <li class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+      <ul class="navbar__menu" id="navMenu">
+        <li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Home <i
+              data-lucide="chevron-down" class="w-4 h-4"></i></a>
+          <ul class="navbar__dropdown">
+            <li><a href="index.html" class="navbar__dropdown-link">Home 1</a></li>
+            <li><a href="index-niche.html" class="navbar__dropdown-link">Home 2</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
+        <li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li>
+        <li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li>
+        <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down"
+              class="w-4 h-4"></i></a>
+          <ul class="navbar__dropdown">
+            <li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li>
+            <li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down"
+              class="w-4 h-4"></i></a>
+          <ul class="navbar__dropdown">
+            <li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li>
+            <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+        <li
+          class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
           <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
-          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign Up</a>
+          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign
+            Up</a>
         </li>
       </ul>
       <div class="navbar__actions">
@@ -48,7 +78,8 @@
           <i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i>
           <i data-lucide="moon" class="w-5 h-5 icon-moon"></i>
         </button>
-        <button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button>
+        <button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe"
+            class="w-5 h-5"></i></button>
         <a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a>
         <a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a>
         <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
@@ -63,32 +94,39 @@
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=1600&h=900&fit=crop" alt="Motorcycle on mountain road" class="w-full h-full object-cover" />
+      <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=1600&h=900&fit=crop"
+        alt="Motorcycle on mountain road" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
     </div>
 
     <!-- Floating particles effect -->
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/40 rounded-full" style="animation: float 6s ease-in-out infinite;"></div>
-      <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-accent/30 rounded-full" style="animation: float 8s ease-in-out infinite 1s;"></div>
-      <div class="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-primary/50 rounded-full" style="animation: float 7s ease-in-out infinite 2s;"></div>
+      <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/40 rounded-full"
+        style="animation: float 6s ease-in-out infinite;"></div>
+      <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-accent/30 rounded-full"
+        style="animation: float 8s ease-in-out infinite 1s;"></div>
+      <div class="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-primary/50 rounded-full"
+        style="animation: float 7s ease-in-out infinite 2s;"></div>
     </div>
 
     <div class="section__container relative z-10 text-center py-20">
       <div class="animate-on-scroll max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+        <div
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
           <i data-lucide="compass" class="w-4 h-4 text-primary"></i>
           <span class="text-white/90 font-semibold text-sm tracking-wider">ADVENTURE TOURS 2026</span>
         </div>
 
         <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-900 text-white leading-[1.05] mb-6">
           Your Next
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-yellow-400">Adventure</span>
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-yellow-400">Adventure</span>
           <br />Starts Here
         </h1>
 
         <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Embark on breathtaking motorcycle tours through winding mountain roads, coastal highways, and ancient trails. Expert guides. Premium bikes. Memories for a lifetime.
+          Embark on breathtaking motorcycle tours through winding mountain roads, coastal highways, and ancient trails.
+          Expert guides. Premium bikes. Memories for a lifetime.
         </p>
 
         <div class="flex flex-wrap justify-center gap-4 mb-16">
@@ -96,29 +134,34 @@
             <i data-lucide="play-circle" class="w-5 h-5"></i>
             Explore Tours
           </a>
-          <a href="about.html" class="btn btn--lg bg-white/10 backdrop-blur-md border-2 border-white/20 text-white hover:bg-white/20 hover:text-white">
+          <a href="about.html"
+            class="btn btn--lg bg-white/10 backdrop-blur-md border-2 border-white/20 text-white hover:bg-white/20 hover:text-white">
             Our Story
           </a>
         </div>
 
         <!-- Tour highlights -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll" data-delay="100">
+          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
+            data-delay="100">
             <i data-lucide="mountain" class="w-8 h-8 text-primary mx-auto mb-2"></i>
             <div class="font-heading font-700 text-white text-lg">Mountain</div>
             <div class="text-white/50 text-xs">12 Routes</div>
           </div>
-          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll" data-delay="200">
+          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
+            data-delay="200">
             <i data-lucide="waves" class="w-8 h-8 text-accent mx-auto mb-2"></i>
             <div class="font-heading font-700 text-white text-lg">Coastal</div>
             <div class="text-white/50 text-xs">8 Routes</div>
           </div>
-          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll" data-delay="300">
+          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
+            data-delay="300">
             <i data-lucide="trees" class="w-8 h-8 text-green-400 mx-auto mb-2"></i>
             <div class="font-heading font-700 text-white text-lg">Forest</div>
             <div class="text-white/50 text-xs">15 Routes</div>
           </div>
-          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll" data-delay="400">
+          <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
+            data-delay="400">
             <i data-lucide="landmark" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i>
             <div class="font-heading font-700 text-white text-lg">Heritage</div>
             <div class="text-white/50 text-xs">10 Routes</div>
@@ -141,14 +184,17 @@
       <div class="section__header animate-on-scroll">
         <span class="section__label"><i data-lucide="map-pin" class="w-4 h-4"></i> FEATURED TOURS</span>
         <h2 class="section__title">Handpicked Adventure Experiences</h2>
-        <p class="section__subtitle">Curated rides designed by passionate bikers. Each tour is crafted to give you the perfect blend of thrill, scenery, and local culture.</p>
+        <p class="section__subtitle">Curated rides designed by passionate bikers. Each tour is crafted to give you the
+          perfect blend of thrill, scenery, and local culture.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Tour 1 -->
         <div class="card animate-on-scroll group" data-delay="0">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Himalayan Mountain Pass Tour" class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop"
+              alt="Himalayan Mountain Pass Tour"
+              class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute top-4 left-4"><span class="card__badge bg-accent/90 text-white">Bestseller</span></div>
             <div class="absolute bottom-4 left-4 right-4">
@@ -161,12 +207,16 @@
           </div>
           <div class="card__body">
             <h3 class="card__title">Himalayan Mountain Pass</h3>
-            <p class="card__text">Conquer the highest motorable roads in the world. Ride through Leh-Manali highway with stunning valley views and ancient monasteries.</p>
+            <p class="card__text">Conquer the highest motorable roads in the world. Ride through Leh-Manali highway with
+              stunning valley views and ancient monasteries.</p>
             <div class="flex items-center gap-2 mt-3">
               <div class="flex -space-x-2">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
               </div>
               <span class="text-xs text-slate-500">24 riders joined</span>
             </div>
@@ -180,7 +230,9 @@
         <!-- Tour 2 -->
         <div class="card animate-on-scroll group" data-delay="150">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop" alt="Coastal Sunset Ride" class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop"
+              alt="Coastal Sunset Ride"
+              class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute top-4 left-4"><span class="card__badge bg-primary/90 text-white">Popular</span></div>
             <div class="absolute bottom-4 left-4 right-4">
@@ -193,11 +245,14 @@
           </div>
           <div class="card__body">
             <h3 class="card__title">Coastal Sunset Trail</h3>
-            <p class="card__text">Ride along the breathtaking coastline at golden hour. Experience beach towns, fresh seafood, and ocean sunsets that paint the sky.</p>
+            <p class="card__text">Ride along the breathtaking coastline at golden hour. Experience beach towns, fresh
+              seafood, and ocean sunsets that paint the sky.</p>
             <div class="flex items-center gap-2 mt-3">
               <div class="flex -space-x-2">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
               </div>
               <span class="text-xs text-slate-500">18 riders joined</span>
             </div>
@@ -211,7 +266,9 @@
         <!-- Tour 3 -->
         <div class="card animate-on-scroll group" data-delay="300">
           <div class="relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=400&fit=crop" alt="Mystic Forest Expedition" class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=400&fit=crop"
+              alt="Mystic Forest Expedition"
+              class="card__image w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute top-4 left-4"><span class="card__badge bg-green-500/90 text-white">New</span></div>
             <div class="absolute bottom-4 left-4 right-4">
@@ -224,10 +281,12 @@
           </div>
           <div class="card__body">
             <h3 class="card__title">Mystic Forest Expedition</h3>
-            <p class="card__text">Venture deep into ancient forests on winding trails. Camp under the stars, cross streams, and discover nature's hidden wonders.</p>
+            <p class="card__text">Venture deep into ancient forests on winding trails. Camp under the stars, cross
+              streams, and discover nature's hidden wonders.</p>
             <div class="flex items-center gap-2 mt-3">
               <div class="flex -space-x-2">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+                  class="w-7 h-7 rounded-full border-2 border-white dark:border-surface-dark" alt="" />
               </div>
               <span class="text-xs text-slate-500">6 spots left</span>
             </div>
@@ -240,13 +299,15 @@
       </div>
 
       <div class="text-center mt-10 animate-on-scroll">
-        <a href="services.html" class="btn btn--outline btn--lg">See All Tours <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="services.html" class="btn btn--outline btn--lg">See All Tours <i data-lucide="arrow-right"
+            class="w-5 h-5"></i></a>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE COUNTS -->
-  <section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+  <section class="relative py-24 overflow-hidden"
+    style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
@@ -273,29 +334,220 @@
     </div>
   </section>
 
+  <!-- ADVENTURE ESSENTIALS -->
+  <section class="section">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label"><i data-lucide="package" class="w-4 h-4"></i> THE ESSENTIALS</span>
+        <h2 class="section__title">Adventure Gear & Equipment</h2>
+        <p class="section__subtitle">Beyond the bike, we provide the critical gear needed for long-distance expeditions
+          and off-road discovery.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="flex flex-col items-center p-8 bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 animate-on-scroll">
+          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+            <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Hard Luggage</h3>
+          <p class="text-sm text-slate-500 text-center">Heavy-duty aluminum panniers and top boxes for all your
+            adventure supplies.</p>
+        </div>
+        <div
+          class="flex flex-col items-center p-8 bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
+          data-delay="100">
+          <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
+            <i data-lucide="radio" class="w-8 h-8 text-accent"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Satellite Comms</h3>
+          <p class="text-sm text-slate-500 text-center">Stay connected even in the most remote areas with GPS tracking
+            and SOS features.</p>
+        </div>
+        <div
+          class="flex flex-col items-center p-8 bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
+          data-delay="200">
+          <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
+            <i data-lucide="wrench" class="w-8 h-8 text-blue-500"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Rescue Kit</h3>
+          <p class="text-sm text-slate-500 text-center">Comprehensive tool-kits and tire repair systems tailored for
+            your specific bike model.</p>
+        </div>
+        <div
+          class="flex flex-col items-center p-8 bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
+          data-delay="300">
+          <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
+            <i data-lucide="tent" class="w-8 h-8 text-purple-500"></i>
+          </div>
+          <h3 class="font-heading text-lg font-700 mb-2">Camping Units</h3>
+          <p class="text-sm text-slate-500 text-center">Ultra-lightweight tents and sleep systems designed specifically
+            for motorcycle travel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRO TIPS -->
+  <section class="section section--gray">
+    <div class="section__container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll">
+          <span class="section__label"><i data-lucide="lightbulb" class="w-4 h-4"></i> PRO TIPS</span>
+          <h2 class="section__title text-left">Master the Off-Road</h2>
+          <p class="section__subtitle text-left ml-0">Learn essential techniques from our master guides to handle any
+            terrain with confidence and safety.</p>
+
+          <ul class="space-y-6 mt-8">
+            <li class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                1</div>
+              <div>
+                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Body Positioning</h4>
+                <p class="text-sm text-slate-500">Learn when to stand and how to use your weight to balance the bike on
+                  loose surfaces.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                2</div>
+              <div>
+                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Line Selection</h4>
+                <p class="text-sm text-slate-500">Expert advice on reading the trail ahead and choosing the safest, most
+                  efficient path.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                3</div>
+              <div>
+                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Braking Control</h4>
+                <p class="text-sm text-slate-500">Master the art of modulated braking on dirt, gravel, and mud without
+                  losing traction.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="relative animate-on-scroll">
+          <div class="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl"></div>
+          <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?w=600\u0026h=700\u0026fit=crop"
+            alt="Rider practicing off-road skills"
+            class="relative z-10 rounded-2xl shadow-2xl w-full h-[500px] object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EXPEDITIONS -->
+  <section class="section">
+    <div class="section__container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__label"><i data-lucide="calendar" class="w-4 h-4"></i> UPCOMING EXPEDITIONS</span>
+        <h2 class="section__title">Join a Scheduled Group</h2>
+        <p class="section__subtitle">Limited spots available for our upcoming seasonal tours. Reserve your place in the
+          pack today.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Expedition 1 -->
+        <div
+          class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group">
+          <div class="w-full md:w-32 text-center md:text-left">
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">MAY 12</div>
+          </div>
+          <div class="flex-1 min-w-[200px]">
+            <h3
+              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              Trans-Siberian Traverse</h3>
+            <p class="text-sm text-slate-500">14 Days • 2,400km • Hard Endurance</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-xs font-bold uppercase">2 Spots
+              Left</span>
+            <button class="btn btn--primary btn--sm">Register</button>
+          </div>
+        </div>
+
+        <!-- Expedition 2 -->
+        <div
+          class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group"
+          data-delay="100">
+          <div class="w-full md:w-32 text-center md:text-left">
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">JUN 05</div>
+          </div>
+          <div class="flex-1 min-w-[200px]">
+            <h3
+              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              Saharan Oasis Loop</h3>
+            <p class="text-sm text-slate-500">7 Days • 1,100km • Desert/Dunes</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase">Open for
+              Entry</span>
+            <button class="btn btn--primary btn--sm">Register</button>
+          </div>
+        </div>
+
+        <!-- Expedition 3 -->
+        <div
+          class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group"
+          data-delay="200">
+          <div class="w-full md:w-32 text-center md:text-left">
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">JUL 18</div>
+          </div>
+          <div class="flex-1 min-w-[200px]">
+            <h3
+              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              Andean High Cloud Tour</h3>
+            <p class="text-sm text-slate-500">10 Days • 1,600km • Altitude Focus</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase">Early Bird</span>
+            <button class="btn btn--primary btn--sm">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GALLERY SECTION -->
   <section class="section section--gray">
     <div class="section__container">
       <div class="section__header animate-on-scroll">
         <span class="section__label"><i data-lucide="camera" class="w-4 h-4"></i> TOUR GALLERY</span>
         <h2 class="section__title">Captured Moments</h2>
-        <p class="section__subtitle">A glimpse into the adventures our riders have experienced. Real moments from real tours.</p>
+        <p class="section__subtitle">A glimpse into the adventures our riders have experienced. Real moments from real
+          tours.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group animate-on-scroll">
-          <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&h=600&fit=crop" alt="Riders on open road" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&h=600&fit=crop"
+            alt="Riders on open road"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
         <div class="rounded-2xl overflow-hidden group animate-on-scroll" data-delay="100">
-          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=300&h=300&fit=crop" alt="Mountain trail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=300&h=300&fit=crop"
+            alt="Mountain trail"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
         <div class="rounded-2xl overflow-hidden group animate-on-scroll" data-delay="200">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=300&fit=crop" alt="Sunset ride" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300&h=300&fit=crop" alt="Sunset ride"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
         <div class="rounded-2xl overflow-hidden group animate-on-scroll" data-delay="300">
-          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=300&h=300&fit=crop" alt="Sport bike" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=300&h=300&fit=crop" alt="Sport bike"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
         <div class="rounded-2xl overflow-hidden group animate-on-scroll" data-delay="400">
-          <img src="https://images.unsplash.com/photo-1558981420-c532902e58b4?w=300&h=300&fit=crop" alt="Adventure motorcycle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="https://images.unsplash.com/photo-1558981420-c532902e58b4?w=300&h=300&fit=crop"
+            alt="Adventure motorcycle"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
     </div>
@@ -304,15 +556,21 @@
   <!-- CTA -->
   <section class="section">
     <div class="section__container">
-      <div class="bg-gradient-to-r from-primary to-primary-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden animate-on-scroll">
+      <div
+        class="bg-gradient-to-r from-primary to-primary-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden animate-on-scroll">
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-10 w-48 h-48 bg-black/10 rounded-full blur-3xl"></div>
         <div class="relative z-10">
           <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-4">Ready for Your Next Adventure?</h2>
-          <p class="text-white/80 text-lg max-w-xl mx-auto mb-8">Don't wait for the perfect moment—create it. Book your tour today and ride into the sunset.</p>
+          <p class="text-white/80 text-lg max-w-xl mx-auto mb-8">Don't wait for the perfect moment—create it. Book your
+            tour today and ride into the sunset.</p>
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="services.html" class="btn btn--lg bg-white text-primary hover:bg-slate-50 hover:text-primary-dark border-2 border-transparent font-700">Browse Tours</a>
-            <a href="contact.html" class="btn btn--lg bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white">Contact Us</a>
+            <a href="services.html"
+              class="btn btn--lg bg-white text-primary hover:bg-slate-50 hover:text-primary-dark border-2 border-transparent font-700">Browse
+              Tours</a>
+            <a href="contact.html"
+              class="btn btn--lg bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white">Contact
+              Us</a>
           </div>
         </div>
       </div>
@@ -320,21 +578,44 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer__grid">
+      <!-- Brand -->
       <div>
         <a href="index.html" class="navbar__logo" style="color: white;">
-          <div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div>
+          <div class="navbar__logo-icon">
+            <i data-lucide="bike" class="w-5 h-5"></i>
+          </div>
           <span>Ride<span class="text-primary">On</span></span>
         </a>
-        <p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels with safety, comfort, and unforgettable experiences.</p>
+        <p class="footer__brand-text">Premium bike rentals and curated guided tours. Explore the world on two wheels
+          with safety, comfort, and unforgettable experiences.</p>
         <div class="footer__socials">
-          <a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg></a>
+          <a href="#" class="footer__social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg></a>
         </div>
       </div>
+
+      <!-- Quick Links -->
       <div>
         <h4 class="footer__heading">Quick Links</h4>
         <ul class="footer__links">
@@ -345,6 +626,8 @@
           <li><a href="contact.html" class="footer__link">Contact</a></li>
         </ul>
       </div>
+
+      <!-- Services -->
       <div>
         <h4 class="footer__heading">Services</h4>
         <ul class="footer__links">
@@ -355,38 +638,47 @@
           <li><a href="services.html" class="footer__link">Safety Gear</a></li>
         </ul>
       </div>
+
+      <!-- Newsletter -->
       <div>
         <h4 class="footer__heading">Newsletter</h4>
         <p class="text-sm text-slate-500 mb-3">Get the latest deals and riding tips delivered to your inbox.</p>
-        <form class="footer__newsletter" onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.querySelector('input').value='';">
+        <form class="footer__newsletter"
+          onsubmit="event.preventDefault(); showToast('Subscribed!', 'success'); this.querySelector('input').value='';">
           <input type="email" placeholder="Your email" class="footer__newsletter-input" required />
-          <button type="submit" class="btn btn--primary btn--sm"><i data-lucide="send" class="w-4 h-4"></i></button>
+          <button type="submit" class="btn btn--primary btn--sm">
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
         </form>
         <div class="mt-4 space-y-2">
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p>
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-primary"></i> hello@rideon.com</p>
-          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="phone"
+              class="w-4 h-4 text-primary"></i> +1 (555) 123-4567</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="mail"
+              class="w-4 h-4 text-primary"></i> hello@rideon.com</p>
+          <p class="text-sm text-slate-500 flex items-center gap-2"><i data-lucide="map-pin"
+              class="w-4 h-4 text-primary"></i> 123 Ride Ave, CA 90210</p>
         </div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__bottom-inner">
-        <p>&copy; 2026 RideOn. All rights reserved.</p>
-        <div class="footer__bottom-links">
-          
-          <a href="contact.html">Support</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50" aria-label="Back to top">
+    <!-- Bottom bar -->
+    <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p></div></div></footer>
+
+  <button id="backToTop"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50"
+    aria-label="Back to top">
     <i data-lucide="chevron-up" class="w-5 h-5"></i>
   </button>
-  <style>#backToTop.visible{opacity:1;visibility:visible;}</style>
+  <style>
+    #backToTop.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
   <div class="toast-container"></div>
 
   <script src="assets/js/main.js"></script>
   <script>lucide.createIcons();</script>
 </body>
+
 </html>

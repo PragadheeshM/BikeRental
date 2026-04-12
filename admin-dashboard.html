@@ -11,7 +11,8 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    .dashboard{display:flex;min-height:100vh;}
+    body{overflow-x:hidden;}
+    .dashboard{display:flex;min-height:100vh;overflow-x:hidden;width:100%;}
     .dashboard__sidebar{width:260px;background:var(--color-secondary);color:#fff;padding:1.5rem 0;display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;z-index:100;transition:transform .3s ease;}
     .dashboard__sidebar-header{padding:0 1.5rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08);}
     .dashboard__sidebar-nav{flex:1;padding:1rem 0.75rem;overflow-y:auto;}
@@ -33,6 +34,24 @@
       .dashboard__sidebar--open{transform:translateX(0);}
       .dashboard__main{margin-left:0;}
       .dashboard__overlay--active{display:block;}
+      #sidebarToggle { display: flex !important; }
+    }
+    #sidebarToggle { display: none; }
+    @media(max-width:480px){
+      .dashboard__content{padding:1.25rem;}
+      .grid-cols-2{grid-template-columns:1fr !important;}
+    }
+    @media(max-width:360px){
+      .dashboard__content{padding:0.75rem;}
+      .dashboard__topbar{padding:0.75rem !important;gap:0.5rem;}
+      .dashboard__topbar h2 { font-size: 0.875rem !important; }
+      .stat-card{padding:0.75rem !important;}
+      .h-\[280px\]{height:150px !important;}
+      .chart-donut{width:100px !important;height:100px !important;}
+      .font-heading.text-2xl{font-size:1.15rem !important;}
+      .stat-card .w-10, .stat-card .h-10{width:2rem !important;height:2rem !important;}
+      .gap-6, .gap-8 { gap: 1rem !important; }
+      .dashboard__main { max-width: 100vw; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -69,7 +88,7 @@
     <main class="dashboard__main">
       <div class="dashboard__topbar">
         <div class="flex items-center gap-4">
-          <button class="lg:hidden btn btn--icon btn--ghost" id="sidebarToggle" aria-label="Toggle sidebar"><i data-lucide="menu" class="w-5 h-5"></i></button>
+          <button class="btn btn--icon btn--ghost" id="sidebarToggle" aria-label="Toggle sidebar"><i data-lucide="menu" class="w-5 h-5"></i></button>
           <h2 class="font-heading text-lg font-700" style="color: var(--text-heading);">Admin Dashboard</h2>
         </div>
         <div class="flex items-center gap-3">
