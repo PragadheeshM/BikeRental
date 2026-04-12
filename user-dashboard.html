@@ -34,9 +34,14 @@
     .tab-pane{display:none;}.tab-pane.active{display:block;}
     @media(max-width:1024px){.dashboard__sidebar{transform:translateX(-100%);}.dashboard__sidebar--open{transform:translateX(0);}.dashboard__main{margin-left:0;}.dashboard__overlay--active{display:block;}#sidebarToggle { display: flex !important; }}
     #sidebarToggle { display: none; }
+    @media(max-width:768px){
+      .dashboard__content{padding:1.5rem;}
+      .grid-cols-2, .grid-cols-4{grid-template-columns:1fr !important; gap: 1.25rem !important;}
+      .dashboard__topbar{padding:1rem 1.25rem !important;}
+    }
     @media(max-width:480px){
-      .dashboard__content{padding:1.25rem;}
-      .grid-cols-2{grid-template-columns:1fr !important;}
+      .dashboard__content{padding:1rem;}
+      .gap-6, .gap-8 { gap: 1rem !important; }
     }
     @media(max-width:360px){
       .dashboard__content{padding:0.75rem;}
