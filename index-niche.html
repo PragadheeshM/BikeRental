@@ -51,13 +51,8 @@
         <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
         <li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li>
         <li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li>
-        <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down"
-              class="w-4 h-4"></i></a>
-          <ul class="navbar__dropdown">
-            <li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li>
-            <li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li>
-          </ul>
-        </li>
+        <li class="navbar__item"><a href="blog-details.html" class="navbar__link">Blog</a></li>
+        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down"
               class="w-4 h-4"></i></a>
           <ul class="navbar__dropdown">
@@ -65,7 +60,6 @@
             <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
           </ul>
         </li>
-        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li
           class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
           <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
@@ -78,8 +72,10 @@
           <i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i>
           <i data-lucide="moon" class="w-5 h-5 icon-moon"></i>
         </button>
-        <button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe"
-            class="w-5 h-5"></i></button>
+        <button class="btn btn--ghost text-xs font-600 px-2" data-rtl-toggle aria-label="Toggle RTL">
+          <span class="rtl-text">RTL</span>
+          <span class="ltr-text" style="display:none;">LTR</span>
+        </button>
         <a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a>
         <a href="register.html" class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a>
         <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
@@ -114,10 +110,10 @@
         <div
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
           <i data-lucide="compass" class="w-4 h-4 text-primary"></i>
-          <span class="text-white/90 font-semibold text-sm tracking-wider">ADVENTURE TOURS 2026</span>
+          <span class="text-white/90 font-medium text-sm tracking-wider">ADVENTURE TOURS 2026</span>
         </div>
 
-        <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-900 text-white leading-[1.05] mb-6">
+        <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-600 text-white leading-[1.05] mb-6">
           Your Next
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-yellow-400">Adventure</span>
@@ -145,37 +141,31 @@
           <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
             data-delay="100">
             <i data-lucide="mountain" class="w-8 h-8 text-primary mx-auto mb-2"></i>
-            <div class="font-heading font-700 text-white text-lg">Mountain</div>
+            <div class="font-heading font-600 text-white text-lg">Mountain</div>
             <div class="text-white/50 text-xs">12 Routes</div>
           </div>
           <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
             data-delay="200">
             <i data-lucide="waves" class="w-8 h-8 text-accent mx-auto mb-2"></i>
-            <div class="font-heading font-700 text-white text-lg">Coastal</div>
+            <div class="font-heading font-600 text-white text-lg">Coastal</div>
             <div class="text-white/50 text-xs">8 Routes</div>
           </div>
           <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
             data-delay="300">
             <i data-lucide="trees" class="w-8 h-8 text-green-400 mx-auto mb-2"></i>
-            <div class="font-heading font-700 text-white text-lg">Forest</div>
+            <div class="font-heading font-600 text-white text-lg">Forest</div>
             <div class="text-white/50 text-xs">15 Routes</div>
           </div>
           <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10 animate-on-scroll"
             data-delay="400">
             <i data-lucide="landmark" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i>
-            <div class="font-heading font-700 text-white text-lg">Heritage</div>
+            <div class="font-heading font-600 text-white text-lg">Heritage</div>
             <div class="text-white/50 text-xs">10 Routes</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-        <div class="w-1 h-2.5 bg-white/60 rounded-full"></div>
-      </div>
-    </div>
   </section>
 
   <!-- FEATURED TOURS -->
@@ -315,19 +305,19 @@
     <div class="section__container relative z-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div class="animate-on-scroll" data-delay="0">
-          <div class="font-heading text-4xl md:text-5xl font-900 text-white mb-2">8+</div>
+          <div class="font-heading text-4xl md:text-5xl font-600 text-white mb-2">8+</div>
           <div class="text-slate-400 text-sm">Years of Experience</div>
         </div>
         <div class="animate-on-scroll" data-delay="100">
-          <div class="font-heading text-4xl md:text-5xl font-900 text-primary mb-2">500+</div>
+          <div class="font-heading text-4xl md:text-5xl font-600 text-primary mb-2">500+</div>
           <div class="text-slate-400 text-sm">Premium Bikes</div>
         </div>
         <div class="animate-on-scroll" data-delay="200">
-          <div class="font-heading text-4xl md:text-5xl font-900 text-white mb-2">12K+</div>
+          <div class="font-heading text-4xl md:text-5xl font-600 text-white mb-2">12K+</div>
           <div class="text-slate-400 text-sm">Happy Riders</div>
         </div>
         <div class="animate-on-scroll" data-delay="300">
-          <div class="font-heading text-4xl md:text-5xl font-900 text-accent mb-2">50+</div>
+          <div class="font-heading text-4xl md:text-5xl font-600 text-accent mb-2">50+</div>
           <div class="text-slate-400 text-sm">Tour Routes</div>
         </div>
       </div>
@@ -350,7 +340,7 @@
           <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
             <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Hard Luggage</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Hard Luggage</h3>
           <p class="text-sm text-slate-500 text-center">Heavy-duty aluminum panniers and top boxes for all your
             adventure supplies.</p>
         </div>
@@ -360,7 +350,7 @@
           <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
             <i data-lucide="radio" class="w-8 h-8 text-accent"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Satellite Comms</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Satellite Comms</h3>
           <p class="text-sm text-slate-500 text-center">Stay connected even in the most remote areas with GPS tracking
             and SOS features.</p>
         </div>
@@ -370,7 +360,7 @@
           <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
             <i data-lucide="wrench" class="w-8 h-8 text-blue-500"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Rescue Kit</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Rescue Kit</h3>
           <p class="text-sm text-slate-500 text-center">Comprehensive tool-kits and tire repair systems tailored for
             your specific bike model.</p>
         </div>
@@ -380,7 +370,7 @@
           <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
             <i data-lucide="tent" class="w-8 h-8 text-purple-500"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Camping Units</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Camping Units</h3>
           <p class="text-sm text-slate-500 text-center">Ultra-lightweight tents and sleep systems designed specifically
             for motorcycle travel.</p>
         </div>
@@ -401,30 +391,30 @@
           <ul class="space-y-6 mt-8">
             <li class="flex gap-4">
               <div
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-600">
                 1</div>
               <div>
-                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Body Positioning</h4>
+                <h4 class="font-heading font-600 text-slate-900 dark:text-white">Body Positioning</h4>
                 <p class="text-sm text-slate-500">Learn when to stand and how to use your weight to balance the bike on
                   loose surfaces.</p>
               </div>
             </li>
             <li class="flex gap-4">
               <div
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-600">
                 2</div>
               <div>
-                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Line Selection</h4>
+                <h4 class="font-heading font-600 text-slate-900 dark:text-white">Line Selection</h4>
                 <p class="text-sm text-slate-500">Expert advice on reading the trail ahead and choosing the safest, most
                   efficient path.</p>
               </div>
             </li>
             <li class="flex gap-4">
               <div
-                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-600">
                 3</div>
               <div>
-                <h4 class="font-heading font-700 text-slate-900 dark:text-white">Braking Control</h4>
+                <h4 class="font-heading font-600 text-slate-900 dark:text-white">Braking Control</h4>
                 <p class="text-sm text-slate-500">Master the art of modulated braking on dirt, gravel, and mud without
                   losing traction.</p>
               </div>
@@ -456,17 +446,17 @@
         <div
           class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group">
           <div class="w-full md:w-32 text-center md:text-left">
-            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
-            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">MAY 12</div>
+            <div class="text-xs text-slate-400 font-600 uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-600 text-slate-900 dark:text-white leading-none">MAY 12</div>
           </div>
           <div class="flex-1 min-w-[200px]">
             <h3
-              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              class="font-heading text-xl font-600 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
               Trans-Siberian Traverse</h3>
             <p class="text-sm text-slate-500">14 Days • 2,400km • Hard Endurance</p>
           </div>
           <div class="flex items-center gap-4">
-            <span class="px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-xs font-bold uppercase">2 Spots
+            <span class="px-3 py-1 bg-red-500/10 text-red-500 rounded-full text-xs font-600 uppercase">2 Spots
               Left</span>
             <button class="btn btn--primary btn--sm">Register</button>
           </div>
@@ -477,17 +467,17 @@
           class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group"
           data-delay="100">
           <div class="w-full md:w-32 text-center md:text-left">
-            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
-            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">JUN 05</div>
+            <div class="text-xs text-slate-400 font-600 uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-600 text-slate-900 dark:text-white leading-none">JUN 05</div>
           </div>
           <div class="flex-1 min-w-[200px]">
             <h3
-              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              class="font-heading text-xl font-600 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
               Saharan Oasis Loop</h3>
             <p class="text-sm text-slate-500">7 Days • 1,100km • Desert/Dunes</p>
           </div>
           <div class="flex items-center gap-4">
-            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase">Open for
+            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-600 uppercase">Open for
               Entry</span>
             <button class="btn btn--primary btn--sm">Register</button>
           </div>
@@ -498,17 +488,17 @@
           class="bg-surface dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 p-6 flex flex-wrap items-center gap-6 animate-on-scroll hover:border-primary transition-colors cursor-pointer group"
           data-delay="200">
           <div class="w-full md:w-32 text-center md:text-left">
-            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest">Starts</div>
-            <div class="text-2xl font-heading font-900 text-slate-900 dark:text-white leading-none">JUL 18</div>
+            <div class="text-xs text-slate-400 font-600 uppercase tracking-widest">Starts</div>
+            <div class="text-2xl font-heading font-600 text-slate-900 dark:text-white leading-none">JUL 18</div>
           </div>
           <div class="flex-1 min-w-[200px]">
             <h3
-              class="font-heading text-xl font-800 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+              class="font-heading text-xl font-600 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
               Andean High Cloud Tour</h3>
             <p class="text-sm text-slate-500">10 Days • 1,600km • Altitude Focus</p>
           </div>
           <div class="flex items-center gap-4">
-            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase">Early Bird</span>
+            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-600 uppercase">Early Bird</span>
             <button class="btn btn--primary btn--sm">Register</button>
           </div>
         </div>
@@ -561,12 +551,12 @@
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-10 w-48 h-48 bg-black/10 rounded-full blur-3xl"></div>
         <div class="relative z-10">
-          <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-4">Ready for Your Next Adventure?</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-600 text-white mb-4">Ready for Your Next Adventure?</h2>
           <p class="text-white/80 text-lg max-w-xl mx-auto mb-8">Don't wait for the perfect moment—create it. Book your
             tour today and ride into the sunset.</p>
           <div class="flex flex-wrap justify-center gap-4">
             <a href="services.html"
-              class="btn btn--lg bg-white text-primary hover:bg-slate-50 hover:text-primary-dark border-2 border-transparent font-700">Browse
+              class="btn btn--lg bg-white text-primary hover:bg-slate-50 hover:text-primary-dark border-2 border-transparent font-600">Browse
               Tours</a>
             <a href="contact.html"
               class="btn btn--lg bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white">Contact
@@ -664,17 +654,6 @@
     <!-- Bottom bar -->
     <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p></div></div></footer>
 
-  <button id="backToTop"
-    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/25 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark hover:scale-110 z-50"
-    aria-label="Back to top">
-    <i data-lucide="chevron-up" class="w-5 h-5"></i>
-  </button>
-  <style>
-    #backToTop.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-  </style>
   <div class="toast-container"></div>
 
   <script src="assets/js/main.js"></script>
@@ -682,3 +661,6 @@
 </body>
 
 </html>
+
+
+

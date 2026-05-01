@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-heading);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 a {
@@ -183,7 +183,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 64px;
 }
 
 .navbar__logo {
@@ -192,7 +192,7 @@ img {
   gap: 0.5rem;
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-heading);
 }
 
@@ -305,7 +305,7 @@ img {
   padding: 0.65rem 1.5rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: var(--radius-lg);
   border: 2px solid transparent;
   cursor: pointer;
@@ -393,6 +393,8 @@ img {
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -408,6 +410,9 @@ img {
 
 .card__body {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card__badge {
@@ -480,7 +485,7 @@ img {
   gap: 0.5rem;
   padding: 0.35rem 1rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-primary);
@@ -491,7 +496,7 @@ img {
 
 .section__title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   margin-bottom: 1rem;
   color: var(--text-heading);

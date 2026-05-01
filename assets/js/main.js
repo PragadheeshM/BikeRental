@@ -210,10 +210,9 @@
     var toggleBtns = document.querySelectorAll('[data-rtl-toggle]');
     var html = document.documentElement;
 
-    var savedDir = localStorage.getItem('br-dir');
-    if (savedDir) {
-      html.setAttribute('dir', savedDir);
-    }
+    var savedDir = localStorage.getItem('br-dir') || 'ltr';
+    html.setAttribute('dir', savedDir);
+    updateRTLButtons(savedDir);
 
     toggleBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -221,8 +220,20 @@
         var newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
         html.setAttribute('dir', newDir);
         localStorage.setItem('br-dir', newDir);
+        updateRTLButtons(newDir);
       });
     });
+
+    function updateRTLButtons(dir) {
+      toggleBtns.forEach(function (btn) {
+        const rtlText = btn.querySelector('.rtl-text');
+        const ltrText = btn.querySelector('.ltr-text');
+        if (rtlText && ltrText) {
+          rtlText.style.display = dir === 'ltr' ? 'block' : 'none';
+          ltrText.style.display = dir === 'rtl' ? 'block' : 'none';
+        }
+      });
+    }
   }
 
   /* ============================================

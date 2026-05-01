@@ -35,13 +35,8 @@
         <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
         <li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li>
         <li class="navbar__item"><a href="pricing.html" class="navbar__link navbar__link--active">Pricing</a></li>
-        <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Blog <i data-lucide="chevron-down"
-              class="w-4 h-4"></i></a>
-          <ul class="navbar__dropdown">
-            <li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li>
-            <li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li>
-          </ul>
-        </li>
+        <li class="navbar__item"><a href="blog-details.html" class="navbar__link">Blog</a></li>
+        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down"
               class="w-4 h-4"></i></a>
           <ul class="navbar__dropdown">
@@ -49,7 +44,6 @@
             <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
           </ul>
         </li>
-        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li
           class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
           <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
@@ -59,8 +53,10 @@
       </ul>
       <div class="navbar__actions"><button class="btn btn--icon btn--ghost" data-theme-toggle
           aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i
-            data-lucide="moon" class="w-5 h-5 icon-moon"></i></button><button class="btn btn--icon btn--ghost"
-          data-rtl-toggle aria-label="Toggle RTL"><i data-lucide="globe" class="w-5 h-5"></i></button><a
+            data-lucide="moon" class="w-5 h-5 icon-moon"></i></button><button class="btn btn--ghost text-xs font-600 px-2" data-rtl-toggle aria-label="Toggle RTL">
+  <span class="rtl-text">RTL</span>
+  <span class="ltr-text" style="display:none;">LTR</span>
+</button><a
           href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a><a href="register.html"
           class="btn btn--primary btn--sm hidden md:inline-flex">Sign Up</a><button class="navbar__toggle"
           id="navToggle" aria-label="Toggle menu"><i data-lucide="menu" class="w-6 h-6 icon-menu"></i><i data-lucide="x"
@@ -96,7 +92,7 @@
             id="pricingToggleCircle"></div>
         </button>
         <span class="text-sm font-600 text-slate-400" id="labelWeekly">Weekly <span
-            class="text-xs text-accent font-700">-20%</span></span>
+            class="text-xs text-accent font-600">-20%</span></span>
       </div>
 
       <!-- Pricing Cards -->
@@ -108,11 +104,11 @@
               class="w-14 h-14 mx-auto rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4">
               <i data-lucide="bike" class="w-7 h-7 text-slate-500"></i>
             </div>
-            <h3 class="font-heading text-xl font-700 mb-1" style="color: var(--text-heading);">Basic Rider</h3>
+            <h3 class="font-heading text-xl font-600 mb-1" style="color: var(--text-heading);">Basic Rider</h3>
             <p class="text-sm text-slate-500">For casual city exploration</p>
           </div>
           <div class="text-center mb-8">
-            <div class="font-heading text-5xl font-900 text-slate-900 dark:text-white" data-daily="18"
+            <div class="font-heading text-5xl font-600 text-slate-900 dark:text-white" data-daily="18"
               data-weekly="100">
               $<span class="price-value">18</span>
             </div>
@@ -143,18 +139,18 @@
           data-delay="150">
           <div class="text-center mb-6">
             <span
-              class="bg-primary text-white text-[11px] tracking-wide font-800 px-4 py-1.5 rounded-full shadow-md whitespace-nowrap inline-block">MOST
+              class="bg-primary text-white text-[11px] tracking-wide font-600 px-4 py-1.5 rounded-full shadow-md whitespace-nowrap inline-block">MOST
               POPULAR</span>
           </div>
           <div class="text-center mb-8">
             <div class="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
               <i data-lucide="bike" class="w-7 h-7 text-primary"></i>
             </div>
-            <h3 class="font-heading text-xl font-700 mb-1" style="color: var(--text-heading);">Pro Explorer</h3>
+            <h3 class="font-heading text-xl font-600 mb-1" style="color: var(--text-heading);">Pro Explorer</h3>
             <p class="text-sm text-slate-500">For serious adventurers</p>
           </div>
           <div class="text-center mb-8">
-            <div class="font-heading text-5xl font-900 text-primary" data-daily="55" data-weekly="308">
+            <div class="font-heading text-5xl font-600 text-primary" data-daily="55" data-weekly="308">
               $<span class="price-value">55</span>
             </div>
             <div class="text-sm text-slate-400 mt-1 price-period">per day</div>
@@ -184,11 +180,11 @@
               class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-yellow-400/20 to-yellow-500/10 flex items-center justify-center mb-4">
               <i data-lucide="crown" class="w-7 h-7 text-yellow-500"></i>
             </div>
-            <h3 class="font-heading text-xl font-700 mb-1" style="color: var(--text-heading);">Elite Adventurer</h3>
+            <h3 class="font-heading text-xl font-600 mb-1" style="color: var(--text-heading);">Elite Adventurer</h3>
             <p class="text-sm text-slate-500">The ultimate riding experience</p>
           </div>
           <div class="text-center mb-8">
-            <div class="font-heading text-5xl font-900 text-slate-900 dark:text-white" data-daily="95"
+            <div class="font-heading text-5xl font-600 text-slate-900 dark:text-white" data-daily="95"
               data-weekly="532">
               $<span class="price-value">95</span>
             </div>
@@ -226,7 +222,7 @@
         <div class="card animate-on-scroll" data-delay="0">
           <button class="w-full p-5 flex items-center justify-between text-left"
             onclick="this.parentElement.classList.toggle('faq-open')">
-            <span class="font-heading font-700 text-sm pr-4" style="color: var(--text-heading);">What documents do I
+            <span class="font-heading font-600 text-sm pr-4" style="color: var(--text-heading);">What documents do I
               need to rent a bike?</span>
             <i data-lucide="chevron-down"
               class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 faq-icon"></i>
@@ -238,7 +234,7 @@
         <div class="card animate-on-scroll" data-delay="100">
           <button class="w-full p-5 flex items-center justify-between text-left"
             onclick="this.parentElement.classList.toggle('faq-open')">
-            <span class="font-heading font-700 text-sm pr-4" style="color: var(--text-heading);">Is insurance included
+            <span class="font-heading font-600 text-sm pr-4" style="color: var(--text-heading);">Is insurance included
               in the rental price?</span>
             <i data-lucide="chevron-down"
               class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 faq-icon"></i>
@@ -250,7 +246,7 @@
         <div class="card animate-on-scroll" data-delay="200">
           <button class="w-full p-5 flex items-center justify-between text-left"
             onclick="this.parentElement.classList.toggle('faq-open')">
-            <span class="font-heading font-700 text-sm pr-4" style="color: var(--text-heading);">Can I cancel or modify
+            <span class="font-heading font-600 text-sm pr-4" style="color: var(--text-heading);">Can I cancel or modify
               my booking?</span>
             <i data-lucide="chevron-down"
               class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 faq-icon"></i>
@@ -262,7 +258,7 @@
         <div class="card animate-on-scroll" data-delay="300">
           <button class="w-full p-5 flex items-center justify-between text-left"
             onclick="this.parentElement.classList.toggle('faq-open')">
-            <span class="font-heading font-700 text-sm pr-4" style="color: var(--text-heading);">What happens if the
+            <span class="font-heading font-600 text-sm pr-4" style="color: var(--text-heading);">What happens if the
               bike breaks down?</span>
             <i data-lucide="chevron-down"
               class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 faq-icon"></i>
@@ -409,3 +405,6 @@
 </body>
 
 </html>
+
+
+

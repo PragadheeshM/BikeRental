@@ -74,15 +74,8 @@
         <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
         <li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li>
         <li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li>
-        <li class="navbar__item">
-          <a href="#" class="navbar__link" data-dropdown>
-            Blog <i data-lucide="chevron-down" class="w-4 h-4"></i>
-          </a>
-          <ul class="navbar__dropdown">
-            <li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li>
-            <li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li>
-          </ul>
-        </li>
+        <li class="navbar__item"><a href="blog-details.html" class="navbar__link">Blog</a></li>
+        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
         <li class="navbar__item">
           <a href="#" class="navbar__link" data-dropdown>
             Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -92,7 +85,6 @@
             <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
           </ul>
         </li>
-        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
 
         <li
           class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
@@ -108,8 +100,9 @@
           <i data-lucide="moon" class="w-5 h-5 icon-moon"></i>
         </button>
         <!-- RTL Toggle -->
-        <button class="btn btn--icon btn--ghost" data-rtl-toggle aria-label="Toggle RTL">
-          <i data-lucide="globe" class="w-5 h-5"></i>
+        <button class="btn btn--ghost text-xs font-600 px-2" data-rtl-toggle aria-label="Toggle RTL">
+          <span class="rtl-text">RTL</span>
+          <span class="ltr-text" style="display:none;">LTR</span>
         </button>
         <!-- Auth -->
         <a href="login.html" class="btn btn--ghost btn--sm hidden md:inline-flex">Sign In</a>
@@ -126,13 +119,13 @@
   <!-- ============================================
        HERO SECTION
        ============================================ -->
-  <section class="relative overflow-hidden min-h-[95vh] flex items-center">
+  <section class="relative overflow-hidden min-h-[95vh] flex items-center pt-32">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
       <img src="assets/img/hero-bg.png" alt="Hero background" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/40 to-secondary/90"></div>
     </div>
-    
+
     <!-- Decorative elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
@@ -150,15 +143,15 @@
           <div
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 mx-auto">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span class="text-primary font-semibold text-sm tracking-wide">PREMIUM BIKE RENTALS & TOURS</span>
+            <span class="text-primary font-medium text-sm tracking-wide">PREMIUM BIKE RENTALS & TOURS</span>
           </div>
-          <h1 class="font-heading text-4xl md:text-5xl lg:text-7xl font-900 text-white leading-[1.1] mb-6">
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-7xl font-600 text-white leading-[1.1] mb-6">
             Explore the World
             <span class="block mt-2">on <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Two
                 Wheels</span></span>
           </h1>
-          <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             From city cruisers to adventure motorcycles, find your perfect ride. Book premium rentals and join curated
             guided tours to discover hidden gems.
           </p>
@@ -176,56 +169,20 @@
           <!-- Stats -->
           <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-16 border-t border-white/10 pt-8">
             <div>
-              <div class="font-heading text-3xl font-800 text-white">500<span class="text-primary">+</span></div>
+              <div class="font-heading text-3xl font-600 text-white">500<span class="text-primary">+</span></div>
               <div class="text-slate-500 text-sm mt-1">Bikes Available</div>
             </div>
             <div>
-              <div class="font-heading text-3xl font-800 text-white">50<span class="text-primary">+</span></div>
+              <div class="font-heading text-3xl font-600 text-white">50<span class="text-primary">+</span></div>
               <div class="text-slate-500 text-sm mt-1">Tour Routes</div>
             </div>
             <div>
-              <div class="font-heading text-3xl font-800 text-white">12K<span class="text-primary">+</span></div>
+              <div class="font-heading text-3xl font-600 text-white">12K<span class="text-primary">+</span></div>
               <div class="text-slate-500 text-sm mt-1">Happy Riders</div>
             </div>
           </div>
         </div>
 
-        <!-- Featured Image below content -->
-        <div class="animate-on-scroll relative max-w-3xl mx-auto" data-delay="200">
-          <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <img src="https://images.unsplash.com/photo-1558981420-c532902e58b4?w=1000&h=500&fit=crop"
-              alt="Adventure motorcycle on scenic road" class="relative rounded-2xl shadow-2xl w-full object-cover h-[350px] md:h-[450px]" />
-            
-            <!-- Floating cards (centered better) -->
-            <div
-              class="absolute -bottom-6 -left-4 md:-left-8 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
-              data-delay="500" style="backdrop-filter: blur(10px);">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <i data-lucide="shield-check" class="w-5 h-5 md:w-6 md:h-6 text-accent"></i>
-                </div>
-                <div class="text-left">
-                  <div class="font-heading font-700 text-xs md:text-sm text-slate-900 dark:text-white">Fully Insured</div>
-                  <div class="text-slate-500 text-[10px] md:text-xs">All rides covered</div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="absolute -top-4 -right-4 md:-right-8 bg-white dark:bg-surface-dark rounded-xl p-4 shadow-xl border border-slate-100 dark:border-slate-800 animate-on-scroll"
-              data-delay="700" style="backdrop-filter: blur(10px);">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <i data-lucide="star" class="w-5 h-5 md:w-6 md:h-6 text-primary"></i>
-                </div>
-                <div class="text-left">
-                  <div class="font-heading font-700 text-xs md:text-sm text-slate-900 dark:text-white">4.9 Rating</div>
-                  <div class="text-slate-500 text-[10px] md:text-xs">2,400+ reviews</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -374,7 +331,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">4.9</span>
             </div>
           </div>
           <div class="card__body">
@@ -406,7 +363,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">4.8</span>
             </div>
           </div>
           <div class="card__body">
@@ -438,7 +395,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">5.0</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">5.0</span>
             </div>
           </div>
           <div class="card__body">
@@ -470,7 +427,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">4.7</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">4.7</span>
             </div>
           </div>
           <div class="card__body">
@@ -502,7 +459,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">4.9</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">4.9</span>
             </div>
           </div>
           <div class="card__body">
@@ -534,7 +491,7 @@
             <div
               class="absolute top-4 right-4 bg-white/90 dark:bg-surface-dark/90 backdrop-blur rounded-lg px-2 py-1 flex items-center gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 text-yellow-500 fill-yellow-500"></i>
-              <span class="text-xs font-bold text-slate-900 dark:text-white">4.8</span>
+              <span class="text-xs font-600 text-slate-900 dark:text-white">4.8</span>
             </div>
           </div>
           <div class="card__body">
@@ -580,18 +537,14 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 relative">
-        <!-- Connector line -->
-        <div
-          class="hidden md:block absolute top-20 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20">
-        </div>
 
         <!-- Step 1 -->
         <div class="text-center animate-on-scroll relative" data-delay="0">
           <div
-            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-600 mb-6 relative z-10 shadow-lg shadow-primary/25">
             01
           </div>
-          <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Choose Your Ride</h3>
+          <h3 class="font-heading text-xl font-600 text-slate-900 dark:text-white mb-3">Choose Your Ride</h3>
           <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Browse our collection of bikes, scooters,
             and motorcycles. Filter by type, price, and availability.</p>
         </div>
@@ -599,10 +552,10 @@
         <!-- Step 2 -->
         <div class="text-center animate-on-scroll relative" data-delay="150">
           <div
-            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-600 mb-6 relative z-10 shadow-lg shadow-primary/25">
             02
           </div>
-          <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Book & Pay Online</h3>
+          <h3 class="font-heading text-xl font-600 text-slate-900 dark:text-white mb-3">Book & Pay Online</h3>
           <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Secure your booking instantly with our safe
             payment system. Choose your dates and pickup location.</p>
         </div>
@@ -610,10 +563,10 @@
         <!-- Step 3 -->
         <div class="text-center animate-on-scroll relative" data-delay="300">
           <div
-            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-800 mb-6 relative z-10 shadow-lg shadow-primary/25">
+            class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center font-heading text-xl font-600 mb-6 relative z-10 shadow-lg shadow-primary/25">
             03
           </div>
-          <h3 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-3">Hit the Road!</h3>
+          <h3 class="font-heading text-xl font-600 text-slate-900 dark:text-white mb-3">Hit the Road!</h3>
           <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">Pick up your bike, gear up with our free
             safety equipment, and experience the ride of a lifetime!</p>
         </div>
@@ -644,7 +597,7 @@
             <i data-lucide="compass" class="w-4 h-4"></i>
             GUIDED TOURS
           </span>
-          <h2 class="font-heading text-3xl md:text-4xl font-800 text-white mb-6 leading-tight">Discover Unforgettable
+          <h2 class="font-heading text-3xl md:text-4xl font-600 text-white mb-6 leading-tight">Discover Unforgettable
             Routes with Expert Guides</h2>
           <p class="text-slate-400 text-lg mb-8 leading-relaxed">
             Join our curated adventure tours led by experienced local guides. From coastal highways to mountain passes,
@@ -707,7 +660,7 @@
           <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
             <i data-lucide="info" class="w-8 h-8 text-primary"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Smart Helmets</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Smart Helmets</h3>
           <p class="text-sm text-slate-500">DOT-certified helmets with integrated Bluetooth and superior ventilation.
           </p>
         </div>
@@ -715,7 +668,7 @@
           <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-4">
             <i data-lucide="shield-check" class="w-8 h-8 text-accent"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">Body Armor</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">Body Armor</h3>
           <p class="text-sm text-slate-500">Lightweight, breathable jackets and gloves with reinforced impact
             protection.</p>
         </div>
@@ -723,7 +676,7 @@
           <div class="w-16 h-16 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
             <i data-lucide="navigation" class="w-8 h-8 text-blue-500"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">GPS Trackers</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">GPS Trackers</h3>
           <p class="text-sm text-slate-500">Real-time GPS tracking and pre-loaded scenic routes on all adventure bikes.
           </p>
         </div>
@@ -731,7 +684,7 @@
           <div class="w-16 h-16 mx-auto rounded-full bg-purple-500/10 flex items-center justify-center mb-4">
             <i data-lucide="heart-pulse" class="w-8 h-8 text-purple-500"></i>
           </div>
-          <h3 class="font-heading text-lg font-700 mb-2">First Aid Kits</h3>
+          <h3 class="font-heading text-lg font-600 mb-2">First Aid Kits</h3>
           <p class="text-sm text-slate-500">Compact, weather-sealed medical kits included for all long-distance tours.
           </p>
         </div>
@@ -760,8 +713,8 @@
             alt="Coastal Road"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="font-heading text-xl font-800 mb-1">Pacific Coast Trail</h3>
+          <div class="absolute bottom-6 left-6">
+            <h3 class="font-heading text-xl font-600 mb-1 text-white">Pacific Coast Trail</h3>
             <p class="text-sm text-white/70">120 Miles • Easy • Coastal</p>
           </div>
         </div>
@@ -770,8 +723,8 @@
             alt="Mountain Pass"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="font-heading text-xl font-800 mb-1">High Peak Pass</h3>
+          <div class="absolute bottom-6 left-6">
+            <h3 class="font-heading text-xl font-600 mb-1 text-white">High Peak Pass</h3>
             <p class="text-sm text-white/70">85 Miles • Advanced • Mountains</p>
           </div>
         </div>
@@ -780,8 +733,8 @@
             alt="Countryside"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="font-heading text-xl font-800 mb-1">Vintage Valley Loop</h3>
+          <div class="absolute bottom-6 left-6">
+            <h3 class="font-heading text-xl font-600 mb-1 text-white">Vintage Valley Loop</h3>
             <p class="text-sm text-white/70">45 Miles • Moderate • Rural</p>
           </div>
         </div>
@@ -802,7 +755,7 @@
 
         <div class="grid lg:grid-cols-2 gap-12 items-center p-8 md:p-16 relative z-10">
           <div class="order-2 lg:order-1 text-center lg:text-left">
-            <h2 class="font-heading text-3xl md:text-5xl font-900 text-white leading-tight mb-6">Adventure in Your
+            <h2 class="font-heading text-3xl md:text-5xl font-600 text-white leading-tight mb-6">Adventure in Your
               Pocket</h2>
             <p class="text-slate-300 text-lg mb-8 leading-relaxed">Download the RideOn app to manage your bookings,
               track your riding stats, and access exclusive route maps with real-time GPS guidance.</p>
@@ -812,16 +765,16 @@
                 class="btn bg-white text-slate-900 hover:bg-slate-100 border-transparent py-4 px-6 flex items-center gap-3">
                 <i data-lucide="smartphone" class="w-6 h-6"></i>
                 <div class="text-left">
-                  <div class="text-[10px] uppercase font-bold leading-tight">Download on the</div>
-                  <div class="text-base font-800 leading-tight">App Store</div>
+                  <div class="text-[10px] uppercase font-600 leading-tight">Download on the</div>
+                  <div class="text-base font-600 leading-tight">App Store</div>
                 </div>
               </a>
               <a href="#"
                 class="btn bg-white text-slate-900 hover:bg-slate-100 border-transparent py-4 px-6 flex items-center gap-3">
                 <i data-lucide="play" class="w-6 h-6"></i>
                 <div class="text-left">
-                  <div class="text-[10px] uppercase font-bold leading-tight">Get it on</div>
-                  <div class="text-base font-800 leading-tight">Google Play</div>
+                  <div class="text-[10px] uppercase font-600 leading-tight">Get it on</div>
+                  <div class="text-base font-600 leading-tight">Google Play</div>
                 </div>
               </a>
             </div>
@@ -871,7 +824,7 @@
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
               alt="Alex Thompson" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Alex Thompson</div>
+              <div class="font-heading font-600 text-sm text-slate-900 dark:text-white">Alex Thompson</div>
               <div class="text-xs text-slate-500">Adventure Tour • March 2026</div>
             </div>
           </div>
@@ -893,7 +846,7 @@
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
               alt="Sarah Chen" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Sarah Chen</div>
+              <div class="font-heading font-600 text-sm text-slate-900 dark:text-white">Sarah Chen</div>
               <div class="text-xs text-slate-500">Scooter Rental • Feb 2026</div>
             </div>
           </div>
@@ -915,7 +868,7 @@
             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
               alt="Marcus Rivera" class="w-11 h-11 rounded-full object-cover" />
             <div>
-              <div class="font-heading font-700 text-sm text-slate-900 dark:text-white">Marcus Rivera</div>
+              <div class="font-heading font-600 text-sm text-slate-900 dark:text-white">Marcus Rivera</div>
               <div class="text-xs text-slate-500">Mountain Tour • Jan 2026</div>
             </div>
           </div>
@@ -1037,7 +990,12 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="footer__bottom"><div class="footer__bottom-inner"><p>&copy; 2026 RideOn. All rights reserved.</p></div></div></footer>
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <p>&copy; 2026 RideOn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- ============================================
        BACK TO TOP BUTTON
@@ -1073,7 +1031,7 @@
             class="rounded-xl w-full h-48 md:h-full object-cover" />
           <div>
             <span class="card__badge mb-3 inline-block">City Cruiser</span>
-            <h4 class="font-heading text-xl font-700 text-slate-900 dark:text-white mb-2">Royal Enfield Classic 350</h4>
+            <h4 class="font-heading text-xl font-600 text-slate-900 dark:text-white mb-2">Royal Enfield Classic 350</h4>
             <p class="text-sm text-slate-500 mb-4 leading-relaxed">A timeless classic that combines vintage aesthetics
               with modern engineering. Perfect for city exploration and scenic countryside rides.</p>
             <div class="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-6">
@@ -1144,4 +1102,6 @@
 </body>
 
 </html>
+
+
 
