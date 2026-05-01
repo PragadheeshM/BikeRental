@@ -125,7 +125,7 @@
 
     dropdownToggles.forEach(function (toggle) {
       toggle.addEventListener('click', function (e) {
-        if (window.innerWidth > 1024) return;
+        if (!window.matchMedia('(max-width: 1024px)').matches) return;
         e.preventDefault();
         var parent = toggle.closest('.navbar__item');
         parent.classList.toggle('navbar__item--open');

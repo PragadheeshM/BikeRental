@@ -1025,6 +1025,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .navbar__container {
+    padding-right: 2.5rem;
+  }
+
   /* Navbar Mobile */
   .navbar__menu {
     position: absolute;
