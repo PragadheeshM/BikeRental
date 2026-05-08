@@ -30,15 +30,8 @@ const buildNav = (filename) => {
         <li class="navbar__item"><a href="about.html" class="navbar__link${d('About')}">About</a></li>
         <li class="navbar__item"><a href="services.html" class="navbar__link${d('Services')}">Services</a></li>
         <li class="navbar__item"><a href="pricing.html" class="navbar__link${d('Pricing')}">Pricing</a></li>
-        <li class="navbar__item">
-          <a href="#" class="navbar__link${d('Blog')}" data-dropdown>
-            Blog <i data-lucide="chevron-down" class="w-4 h-4"></i>
-          </a>
-          <ul class="navbar__dropdown">
-            <li><a href="blog.html" class="navbar__dropdown-link">Blog Grid</a></li>
-            <li><a href="blog-details.html" class="navbar__dropdown-link">Blog Details</a></li>
-          </ul>
-        </li>
+        <li class="navbar__item"><a href="blog.html" class="navbar__link${d('Blog')}">Blog</a></li>
+        <li class="navbar__item"><a href="contact.html" class="navbar__link${d('Contact')}">Contact</a></li>
         <li class="navbar__item">
           <a href="#" class="navbar__link${d('Dashboard')}" data-dropdown>
             Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -48,7 +41,6 @@ const buildNav = (filename) => {
             <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
           </ul>
         </li>
-        <li class="navbar__item"><a href="contact.html" class="navbar__link${d('Contact')}">Contact</a></li>
       </ul>`.replace(/\s+/g, ' ').replace(/> </g, '><'); // condense it nicely but uniformly
 };
 

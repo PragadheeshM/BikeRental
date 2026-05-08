@@ -6,138 +6,11 @@
   <title>Admin Dashboard - RideOn</title>
   <meta name="description" content="RideOn admin dashboard for managing users, bookings, bikes, and business analytics." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#0f172a',light:'#1e293b',lighter:'#334155'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#151929',darker:'#0c0f1a'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
-  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" />
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{DEFAULT:'#f97316',light:'#fb923c',dark:'#ea580c'},secondary:{DEFAULT:'#000000',light:'#111111',lighter:'#222222'},accent:{DEFAULT:'#10b981',light:'#34d399',dark:'#059669'},surface:{DEFAULT:'#ffffff',dark:'#111111',darker:'#000000'}},fontFamily:{heading:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}};</script>
+  <link rel="stylesheet" href="assets/css/style.css" /><link rel="stylesheet" href="assets/css/dark-mode.css" /><link rel="stylesheet" href="assets/css/rtl.css" /><link rel="stylesheet" href="assets/css/dashboard.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body{overflow-x:hidden;}
-    .dashboard{display:flex;min-height:100vh;overflow-x:hidden;width:100%;max-width:100vw;}
-    .dashboard__main{overflow-x:hidden;}
-    .dashboard__sidebar{width:260px;background:#ffffff;color:#000000;border-right:1px solid var(--border-color);padding:1.5rem 0;display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;z-index:100;transition:transform .3s ease;}
-    .dark .dashboard__sidebar{background:var(--color-secondary);color:#ffffff;border-right:none;}
-    .dashboard__sidebar-header{padding:0 1.5rem 1.5rem;border-bottom:1px solid var(--border-color);}
-    .dark .dashboard__sidebar-header{border-bottom:1px solid rgba(255,255,255,.08);}
-    .dashboard__sidebar-nav{flex:1;padding:1rem 0.75rem;overflow-y:auto;}
-    .dashboard__sidebar-link{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;font-size:.875rem;color:#475569;border-radius:.5rem;margin-bottom:.25rem;transition:all .2s ease;text-decoration:none;}
-    .dark .dashboard__sidebar-link{color:#94a3b8;}
-    .dashboard__sidebar-link:hover,.dashboard__sidebar-link--active{background:rgba(249,115,22,.1);color:#f97316;}
-    .dashboard__sidebar-footer{padding:0.75rem 1rem;border-top:1px solid var(--border-color);}
-    .dark .dashboard__sidebar-footer{border-top:1px solid rgba(255,255,255,.08);}
-    .dashboard__sidebar .navbar__logo {color:#000000;}
-    .dark .dashboard__sidebar .navbar__logo {color:#ffffff;}
-    .dashboard__sidebar-section{padding:.5rem 1rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-top:.75rem;}
-    .dashboard__main{flex:1;margin-left:260px;background:var(--bg-body);min-height:100vh;}
-    .dashboard__topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:var(--bg-card);border-bottom:1px solid var(--border-color);position:sticky;top:0;z-index:50;}
-    .dashboard__content{padding:2rem;}
-    .dashboard__overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;}
-    .stat-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:1rem;padding:1.5rem;transition:all .3s ease;min-width:0;overflow:hidden;}
-    .stat-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
-    .chart-bar{display:flex;align-items:flex-end;gap:.5rem;height:200px;padding-top:1rem;}
-    .chart-bar__item{flex:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;}
-    .chart-bar__fill{width:100%;border-radius:.5rem .5rem 0 0;transition:height .8s ease;height:0;}
-    .chart-bar__label{font-size:.65rem;color:#64748b;}
-    @media(max-width:1024px){
-      .dashboard__sidebar{transform:translateX(-100%);}
-      .dashboard__sidebar--open{transform:translateX(0);}
-      .dashboard__main{margin-left:0;}
-      .dashboard__overlay--active{display:block;}
-      #sidebarToggle { display: flex !important; }
-    }
-    #sidebarToggle { display: none; }
-    /* ── 360px – 650px graduated responsive range ── */
 
-    /* Topbar overflow fix: always single row, never wraps */
-    .dashboard__topbar{min-width:0;overflow:hidden;}
-    .dashboard__topbar > div{min-width:0;flex-shrink:1;}
-    /* Prevent stat-card number overflow */
-    .stat-card{min-width:0;overflow:hidden;}
-    /* Clamp chart-header select so it never overflows */
-    .stat-card select.form-input{max-width:120px;min-width:0;}
-
-    /* ── 360px – 650px graduated responsive range ── */
-    @media(max-width:650px){
-      .dashboard__main{overflow-x:hidden;max-width:100%;}
-      .dashboard__content{padding:1.25rem;box-sizing:border-box;}
-      .dashboard__topbar{padding:0.75rem 1rem !important;gap:0.5rem;}
-      /* Compact icon buttons */
-      .dashboard__topbar .btn--icon{width:1.875rem !important;height:1.875rem !important;padding:0.25rem !important;}
-      /* Shrink RTL pill */
-      [data-rtl-toggle]{font-size:0.65rem !important;padding:0.2rem 0.5rem !important;min-width:0;height:1.875rem !important;}
-      /* Tighten right group gap */
-      .dashboard__topbar > div:last-child{gap:0.375rem !important;}
-      .grid-cols-2{grid-template-columns:1fr 1fr !important;}
-      .grid-cols-4{grid-template-columns:1fr 1fr !important;gap:1rem !important;}
-      .gap-6{gap:1rem !important;}
-      .gap-8{gap:1.25rem !important;}
-      .stat-card{padding:1.25rem;}
-      .h-\[280px\]{height:220px !important;}
-      .lg\:grid-cols-3{grid-template-columns:1fr !important;gap:1rem !important;}
-    }
-    @media(max-width:540px){
-      .dashboard__content{padding:1rem;}
-      .dashboard__topbar{padding:0.625rem 0.875rem !important;}
-      .dashboard__topbar h2{font-size:0.9rem !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;}
-      .dashboard__topbar .btn--icon{width:1.75rem !important;height:1.75rem !important;}
-      [data-rtl-toggle]{font-size:0.6rem !important;padding:0.15rem 0.4rem !important;height:1.75rem !important;}
-      .dashboard__topbar > div:last-child{gap:0.3rem !important;padding-left:0.375rem !important;}
-      /* Shrink avatar */
-      .dashboard__topbar img.rounded-full{width:1.875rem !important;height:1.875rem !important;}
-      .stat-card{padding:1rem;}
-      .h-\[280px\]{height:200px !important;}
-      .chart-donut{width:130px !important;height:130px !important;}
-    }
-    @media(max-width:480px){
-      .dashboard__content{padding:0.875rem;}
-      .grid-cols-2,.grid-cols-4{grid-template-columns:1fr 1fr !important;gap:0.75rem !important;}
-      .stat-card{padding:0.875rem;}
-      .h-\[280px\]{height:180px !important;}
-      .chart-donut{width:120px !important;height:120px !important;}
-      .stat-card .w-10,.stat-card .h-10{width:2rem !important;height:2rem !important;}
-      .font-heading.text-2xl{font-size:1.1rem !important;}
-      .dashboard__topbar h2{font-size:0.8125rem !important;max-width:130px;}
-      .dashboard__topbar img.rounded-full{width:1.75rem !important;height:1.75rem !important;}
-      .dashboard__topbar > div:last-child{gap:0.25rem !important;padding-left:0.3rem !important;}
-      /* Separator border between avatar and buttons also shrink */
-      .dashboard__topbar .pl-3{padding-left:0.375rem !important;}
-    }
-    @media(max-width:420px){
-      .dashboard__content{padding:0.75rem;}
-      .dashboard__topbar{padding:0.5rem 0.75rem !important;}
-      .dashboard__topbar h2{font-size:0.75rem !important;max-width:100px;}
-      /* RTL: show only initials, keep single row */
-      [data-rtl-toggle]{font-size:0.55rem !important;padding:0.1rem 0.35rem !important;height:1.625rem !important;}
-      .dashboard__topbar .btn--icon{width:1.625rem !important;height:1.625rem !important;}
-      .dashboard__topbar img.rounded-full{width:1.625rem !important;height:1.625rem !important;}
-      .dashboard__topbar > div:last-child{gap:0.2rem !important;padding-left:0.25rem !important;}
-      .stat-card{padding:0.75rem;}
-      .h-\[280px\]{height:160px !important;}
-      .chart-donut{width:110px !important;height:110px !important;}
-      .font-heading.text-2xl{font-size:1rem !important;}
-      #bookingsTable thead th:nth-child(3),
-      #bookingsTable tbody td:nth-child(3){display:none;}
-    }
-    @media(max-width:360px){
-      .dashboard__content{padding:0.625rem;}
-      .dashboard__topbar{padding:0.5rem 0.5rem !important;}
-      .dashboard__topbar h2{font-size:0.6875rem !important;max-width:75px;}
-      [data-rtl-toggle]{font-size:0.5rem !important;padding:0.1rem 0.3rem !important;height:1.5rem !important;}
-      .dashboard__topbar .btn--icon{width:1.5rem !important;height:1.5rem !important;}
-      .dashboard__topbar img.rounded-full{width:1.5rem !important;height:1.5rem !important;}
-      .dashboard__topbar > div:last-child{gap:0.175rem !important;padding-left:0.2rem !important;}
-      .stat-card{padding:0.625rem !important;}
-      .h-\[280px\]{height:150px !important;}
-      .chart-donut{width:100px !important;height:100px !important;}
-      .stat-card .w-10,.stat-card .h-10{width:1.75rem !important;height:1.75rem !important;}
-      .font-heading.text-2xl{font-size:0.9375rem !important;}
-      .dashboard__main{max-width:100vw;}
-      #bookingsTable thead th:nth-child(3),
-      #bookingsTable tbody td:nth-child(3),
-      #bookingsTable thead th:nth-child(4),
-      #bookingsTable tbody td:nth-child(4){display:none;}
-      #bookingsTable th,#bookingsTable td{padding:0.375rem 0.25rem !important;font-size:0.7rem !important;}
-    }
-  </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 <body class="font-body">
@@ -148,16 +21,19 @@
         <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i data-lucide="bike" class="w-5 h-5"></i></div><span>Ride<span style="color:#f97316;">On</span></span></a>
       </div>
       <nav class="dashboard__sidebar-nav">
-        <div class="dashboard__sidebar-section">Main</div>
+        <div class="dashboard__sidebar-section">Main Menu</div>
         <a href="admin-dashboard.html" class="dashboard__sidebar-link dashboard__sidebar-link--active"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="bike" class="w-5 h-5"></i> Bikes</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="calendar-check" class="w-5 h-5"></i> Bookings</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="map" class="w-5 h-5"></i> Tours</a>
+        
         <div class="dashboard__sidebar-section">Management</div>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="users" class="w-5 h-5"></i> Users</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="message-square" class="w-5 h-5"></i> Reviews</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="credit-card" class="w-5 h-5"></i> Payments</a>
-        <div class="dashboard__sidebar-section">Settings</div>
+        
+        <div class="dashboard__sidebar-section">Account & Settings</div>
+        <a href="#" class="dashboard__sidebar-link"><i data-lucide="user" class="w-5 h-5"></i> Profile</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="settings" class="w-5 h-5"></i> Settings</a>
         <a href="#" class="dashboard__sidebar-link"><i data-lucide="help-circle" class="w-5 h-5"></i> Help</a>
       </nav>
@@ -182,8 +58,11 @@
           </button>
           <button class="btn btn--icon btn--ghost relative" onclick="showToast('3 new notifications', 'info')"><i data-lucide="bell" class="w-5 h-5"></i><span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] rounded-full flex items-center justify-center">3</span></button>
           <div class="flex items-center gap-2 pl-3 border-l border-slate-200 dark:border-slate-700">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full" alt="Admin" />
-            <div class="hidden md:block"><div class="text-sm font-600" style="color: var(--text-heading);">Jake Morrison</div><div class="text-xs text-slate-500">Administrator</div></div>
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full" alt="Profile" />
+            <div class="hidden md:block">
+              <div class="text-sm font-600" style="color: var(--text-heading);">Jake Morrison</div>
+              <div class="text-xs text-slate-500">Administrator</div>
+            </div>
           </div>
         </div>
       </div>
@@ -192,22 +71,22 @@
         <!-- Stats Cards -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div class="stat-card">
-            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center"><i data-lucide="bike" class="w-5 h-5 text-primary"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+12%</span></div>
+            <div class="flex items-center justify-between mb-3"><div class="stat-card__icon-box bg-primary/10"><i data-lucide="bike" class="w-5 h-5 text-primary"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+12%</span></div>
             <div class="font-heading text-2xl font-600" style="color: var(--text-heading);">524</div>
             <div class="text-sm text-slate-500">Total Bikes</div>
           </div>
           <div class="stat-card">
-            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i data-lucide="calendar-check" class="w-5 h-5 text-accent"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+8%</span></div>
+            <div class="flex items-center justify-between mb-3"><div class="stat-card__icon-box bg-accent/10"><i data-lucide="calendar-check" class="w-5 h-5 text-accent"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+8%</span></div>
             <div class="font-heading text-2xl font-600" style="color: var(--text-heading);">1,247</div>
             <div class="text-sm text-slate-500">Bookings</div>
           </div>
           <div class="stat-card">
-            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+22%</span></div>
+            <div class="flex items-center justify-between mb-3"><div class="stat-card__icon-box bg-blue-500/10"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+22%</span></div>
             <div class="font-heading text-2xl font-600" style="color: var(--text-heading);">12,438</div>
             <div class="text-sm text-slate-500">Registered Users</div>
           </div>
           <div class="stat-card">
-            <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center"><i data-lucide="dollar-sign" class="w-5 h-5 text-purple-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+18%</span></div>
+            <div class="flex items-center justify-between mb-3"><div class="stat-card__icon-box bg-purple-500/10"><i data-lucide="dollar-sign" class="w-5 h-5 text-purple-500"></i></div><span class="text-xs font-600 text-accent bg-accent/10 px-2 py-0.5 rounded-full">+18%</span></div>
             <div class="font-heading text-2xl font-600" style="color: var(--text-heading);">$89,540</div>
             <div class="text-sm text-slate-500">Revenue (Mo)</div>
           </div>
@@ -217,8 +96,14 @@
         <div class="grid lg:grid-cols-3 gap-6 mb-8">
           <!-- Bar Chart -->
           <div class="lg:col-span-2 stat-card">
-            <div class="flex items-center justify-between mb-6"><h3 class="font-heading text-base font-600" style="color: var(--text-heading);">Revenue Overview</h3><select class="form-input py-1.5 px-3 text-xs w-auto"><option>This Year</option><option>Last Year</option></select></div>
-            <div class="relative w-full h-[280px] mt-4">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-heading text-base font-600" style="color: var(--text-heading);">Revenue Overview</h3>
+              <select class="form-input py-1.5 px-3 text-xs w-auto">
+                <option>This Year</option>
+                <option>Last Year</option>
+              </select>
+            </div>
+            <div class="chart-container">
               <canvas id="revenueChart"></canvas>
             </div>
           </div>
@@ -248,24 +133,86 @@
         <div class="stat-card">
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
             <h3 class="font-heading text-base font-600" style="color: var(--text-heading);">Recent Bookings</h3>
-            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto"><input type="text" placeholder="Search bookings..." class="form-input py-1.5 px-3 text-sm w-full sm:w-48" data-table-search="bookingsTable" /><a href="#" class="btn btn--primary btn--sm block md:inline-block">View All</a></div>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 w-full md:w-auto"><input type="text" placeholder="Search bookings..." class="form-input py-1.5 px-3 text-sm w-full sm:w-48" data-table-search="bookingsTable" /><a href="#" class="btn btn--primary btn--sm inline-flex">View All</a></div>
           </div>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm" id="bookingsTable">
-              <thead><tr class="border-b border-slate-200 dark:border-slate-700">
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>User</th>
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Bike</th>
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Date</th>
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase" data-sort>Amount</th>
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase">Status</th>
-                <th class="text-left py-3 px-4 font-600 text-slate-500 text-xs uppercase">Action</th>
-              </tr></thead>
+          <div class="dashboard-table-container">
+            <table class="dashboard-table" id="bookingsTable">
+              <thead>
+                <tr>
+                  <th data-sort>User</th>
+                  <th data-sort>Bike</th>
+                  <th data-sort>Date</th>
+                  <th data-sort>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Sarah Chen</span></div></td><td class="py-3 px-4 text-slate-500">BMW GS 1250</td><td class="py-3 px-4 text-slate-500">Mar 28, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$285</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
-                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Marcus Rivera</span></div></td><td class="py-3 px-4 text-slate-500">Kawasaki Ninja 650</td><td class="py-3 px-4 text-slate-500">Mar 27, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$165</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-blue-500/10 text-blue-500">Upcoming</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
-                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Tom Wheeler</span></div></td><td class="py-3 px-4 text-slate-500">Mountain Tour (5D)</td><td class="py-3 px-4 text-slate-500">Mar 25, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$899</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
-                <tr class="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Lisa Park</span></div></td><td class="py-3 px-4 text-slate-500">Vespa Primavera</td><td class="py-3 px-4 text-slate-500">Mar 22, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$54</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Completed</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-2"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><span class="font-600" style="color: var(--text-heading);">Emily Davis</span></div></td><td class="py-3 px-4 text-slate-500">Royal Enfield 350</td><td class="py-3 px-4 text-slate-500">Mar 20, 2026</td><td class="py-3 px-4 font-600" style="color: var(--text-heading);">$75</td><td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-red-500/10 text-red-500">Cancelled</span></td><td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td></tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
+                      <span class="font-600" style="color: var(--text-heading);">Sarah Chen</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-slate-500">BMW GS 1250</td>
+                  <td class="py-3 px-4 text-slate-500">Mar 28, 2026</td>
+                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$285</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td>
+                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
+                      <span class="font-600" style="color: var(--text-heading);">Marcus Rivera</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-slate-500">Kawasaki Ninja 650</td>
+                  <td class="py-3 px-4 text-slate-500">Mar 27, 2026</td>
+                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$165</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-blue-500/10 text-blue-500">Upcoming</span></td>
+                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
+                      <span class="font-600" style="color: var(--text-heading);">Tom Wheeler</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-slate-500">Mountain Tour (5D)</td>
+                  <td class="py-3 px-4 text-slate-500">Mar 25, 2026</td>
+                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$899</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td>
+                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
+                      <span class="font-600" style="color: var(--text-heading);">Lisa Park</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-slate-500">Vespa Primavera</td>
+                  <td class="py-3 px-4 text-slate-500">Mar 22, 2026</td>
+                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$54</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Completed</span></td>
+                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
+                      <span class="font-600" style="color: var(--text-heading);">Emily Davis</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-slate-500">Royal Enfield 350</td>
+                  <td class="py-3 px-4 text-slate-500">Mar 20, 2026</td>
+                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$75</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-red-500/10 text-red-500">Cancelled</span></td>
+                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                </tr>
               </tbody>
             </table>
           </div>

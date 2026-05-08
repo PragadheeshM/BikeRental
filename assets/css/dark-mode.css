@@ -5,33 +5,40 @@
 
 .dark {
   /* Surfaces */
-  --bg-body: #0c0f1a;
-  --bg-card: #151929;
-  --bg-card-hover: #1c2238;
-  --bg-glass: rgba(12, 15, 26, 0.8);
-  --bg-glass-strong: rgba(12, 15, 26, 0.95);
-  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-body: #000000;
+  --bg-card: #111111;
+  --bg-card-hover: #1a1a1a;
+  --bg-glass: #000000;
+  --bg-glass-strong: #000000;
+  --bg-overlay: rgba(0, 0, 0, 0.85);
 
   /* Text */
-  --text-heading: #f1f5f9;
-  --text-body: #94a3b8;
-  --text-muted: #64748b;
-  --text-inverse: #0f172a;
+  --text-heading: #ffffff;
+  --text-body: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #000000;
 
   /* Borders */
-  --border-color: #1e293b;
-  --border-color-light: #1a2035;
+  --border-color: #222222;
+  --border-color-light: #1a1a1a;
 
   /* Neutrals */
-  --color-gray-50: #0f1525;
-  --color-gray-100: #151929;
-  --color-gray-200: #1e293b;
+  --color-gray-50: #0a0a0a; /* Dark grey for alternate sections */
+  --color-gray-100: #111111;
+  --color-gray-200: #1a1a1a;
+  --color-gray-300: #222222;
+  --color-gray-400: #334155;
+  --color-gray-500: #475569;
+  --color-gray-600: #64748b;
+  --color-gray-700: #94a3b8;
+  --color-gray-800: #cbd5e1;
+  --color-gray-900: #f1f5f9;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.7), 0 2px 4px -2px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -4px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.9), 0 8px 10px -6px rgba(0, 0, 0, 0.8);
   --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
 
   color-scheme: dark;
@@ -39,72 +46,107 @@
 
 /* --- Dark Mode Scrollbar --- */
 .dark ::-webkit-scrollbar-track {
-  background: #0c0f1a;
+  background: #000000;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1a1a1a;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #334155;
 }
 
 /* --- Dark Mode Form Inputs --- */
 .dark .form-input {
-  background: #151929;
-  border-color: #1e293b;
-  color: #e2e8f0;
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: #ffffff;
 }
 
 .dark .form-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.15);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
 }
 
 .dark .form-input::placeholder {
   color: #475569;
 }
 
+/* --- Dark Mode Navbar Adjustments --- */
+.dark .navbar {
+  background: var(--bg-glass);
+  border-bottom-color: var(--border-color-light);
+}
+
+.dark .navbar__logo {
+  color: #ffffff;
+}
+
+.dark .navbar__link {
+  color: var(--text-body);
+}
+
+.dark .navbar__link:hover,
+.dark .navbar__link--active {
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.15);
+}
+
+.dark .navbar__toggle {
+  color: #ffffff;
+}
+
 /* --- Dark Mode Skeleton --- */
 .dark .skeleton {
-  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
   background-size: 200% 100%;
 }
 
 /* --- Dark Footer Adjustments --- */
 .dark .footer {
-  background: #070a12;
+  background: var(--bg-body);
 }
 
 .dark .footer__bottom {
-  border-top-color: rgba(255, 255, 255, 0.04);
+  border-top-color: var(--border-color-light);
 }
 
 /* --- Dark Navbar Dropdown --- */
 .dark .navbar__dropdown {
-  background: #151929;
-  border-color: #1e293b;
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.dark .navbar__dropdown-link {
+  color: var(--text-body);
+}
+
+.dark .navbar__dropdown-link:hover {
+  background: rgba(var(--color-primary-rgb), 0.15);
+  color: var(--color-primary);
 }
 
 /* --- Dark Toast --- */
 .dark .toast {
-  background: #151929;
-  border-color: #1e293b;
-  color: #e2e8f0;
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-body);
 }
 
 /* --- Dark Modal --- */
 .dark .modal {
-  background: #151929;
+  background: var(--bg-card);
 }
 
 .dark .modal__header,
 .dark .modal__footer {
-  border-color: #1e293b;
+  border-color: var(--border-color);
 }
 
 /* --- Dark Page Banner --- */
 .dark .page-banner {
-  background: linear-gradient(135deg, #070a12 0%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--bg-body) 0%, var(--bg-card) 100%);
 }
+
+

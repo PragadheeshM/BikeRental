@@ -22,9 +22,9 @@
         extend: {
           colors: {
             primary: { DEFAULT: '#f97316', light: '#fb923c', dark: '#ea580c' },
-            secondary: { DEFAULT: '#0f172a', light: '#1e293b', lighter: '#334155' },
+            secondary: { DEFAULT: '#000000', light: '#111111', lighter: '#222222' },
             accent: { DEFAULT: '#10b981', light: '#34d399', dark: '#059669' },
-            surface: { DEFAULT: '#ffffff', dark: '#151929', darker: '#0c0f1a' }
+            surface: { DEFAULT: '#ffffff', dark: '#111111', darker: '#000000' }
           },
           fontFamily: {
             heading: ['Outfit', 'sans-serif'],
@@ -61,39 +61,7 @@
       </a>
 
       <!-- Desktop Menu -->
-      <ul class="navbar__menu" id="navMenu">
-        <li class="navbar__item">
-          <a href="#" class="navbar__link navbar__link--active" data-dropdown>
-            Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-          </a>
-          <ul class="navbar__dropdown">
-            <li><a href="index.html" class="navbar__dropdown-link">Home 1</a></li>
-            <li><a href="index-niche.html" class="navbar__dropdown-link">Home 2</a></li>
-          </ul>
-        </li>
-        <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
-        <li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li>
-        <li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li>
-        <li class="navbar__item"><a href="blog-details.html" class="navbar__link">Blog</a></li>
-        <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
-        <li class="navbar__item">
-          <a href="#" class="navbar__link" data-dropdown>
-            Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i>
-          </a>
-          <ul class="navbar__dropdown">
-            <li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li>
-            <li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li>
-          </ul>
-        </li>
-
-        <li
-          class="navbar__item md:hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
-          <a href="login.html" class="btn btn--ghost w-full justify-center" style="justify-content:center;">Sign In</a>
-          <a href="register.html" class="btn btn--primary w-full justify-center" style="justify-content:center;">Sign
-            Up</a>
-        </li>
-      </ul>
-      <div class="navbar__actions">
+      <ul class="navbar__menu" id="navMenu"><li class="navbar__item"><a href="#" class="navbar__link navbar__link--active" data-dropdown> Home <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="index.html" class="navbar__dropdown-link">Corporate Home</a></li><li><a href="index-niche.html" class="navbar__dropdown-link">Adventure Home</a></li></ul></li><li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li><li class="navbar__item"><a href="services.html" class="navbar__link">Services</a></li><li class="navbar__item"><a href="pricing.html" class="navbar__link">Pricing</a></li><li class="navbar__item"><a href="blog.html" class="navbar__link">Blog</a></li><li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li><li class="navbar__item"><a href="#" class="navbar__link" data-dropdown> Dashboard <i data-lucide="chevron-down" class="w-4 h-4"></i></a><ul class="navbar__dropdown"><li><a href="admin-dashboard.html" class="navbar__dropdown-link">Admin Dashboard</a></li><li><a href="user-dashboard.html" class="navbar__dropdown-link">User Dashboard</a></li></ul></li></ul><div class="navbar__actions">
         <!-- Theme Toggle -->
         <button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode">
           <i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i>
@@ -161,8 +129,9 @@
               <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
             </a>
             <a href="pricing.html"
-              class="btn btn--lg border-2 border-slate-600 text-white hover:border-primary hover:text-primary bg-transparent px-10">
+              class="btn btn--outline btn--lg group px-10 border-primary text-primary hover:bg-primary hover:text-white">
               View Plans
+              <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
             </a>
           </div>
 
@@ -230,6 +199,7 @@
       </div>
     </div>
   </section>
+  
 
   <!-- ============================================
        FEATURES SECTION
@@ -578,7 +548,7 @@
        GUIDED TOURS CTA
        ============================================ -->
   <section class="relative overflow-hidden py-24"
-    style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+    style="background: linear-gradient(135deg, #000000 0%, #111111 100%);">
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
@@ -748,7 +718,7 @@
   <section class="section">
     <div class="section__container">
       <div
-        class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden relative shadow-2xl animate-on-scroll">
+        class="bg-gradient-to-br from-black to-slate-900 rounded-3xl overflow-hidden relative shadow-2xl animate-on-scroll">
         <!-- Floating bubbles for decoration -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-24 -mt-24"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -ml-16 -mb-16"></div>

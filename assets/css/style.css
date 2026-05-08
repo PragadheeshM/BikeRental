@@ -14,10 +14,10 @@
   --color-primary-rgb: 249, 115, 22;
 
   /* Secondary Palette */
-  --color-secondary: #0f172a;
-  --color-secondary-light: #1e293b;
-  --color-secondary-lighter: #334155;
-  --color-secondary-rgb: 15, 23, 42;
+  --color-secondary: #000000;
+  --color-secondary-light: #111111;
+  --color-secondary-lighter: #222222;
+  --color-secondary-rgb: 0, 0, 0;
 
   /* Accent Palette */
   --color-accent: #10b981;
@@ -35,19 +35,19 @@
   --color-gray-500: #64748b;
   --color-gray-600: #475569;
   --color-gray-700: #334155;
-  --color-gray-800: #1e293b;
-  --color-gray-900: #0f172a;
+  --color-gray-800: #111111;
+  --color-gray-900: #000000;
 
   /* Surfaces */
-  --bg-body: #f8fafc;
+  --bg-body: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --bg-glass: rgba(255, 255, 255, 0.75);
-  --bg-glass-strong: rgba(255, 255, 255, 0.9);
-  --bg-overlay: rgba(15, 23, 42, 0.6);
+  --bg-card-hover: #f8fafc;
+  --bg-glass: #ffffff;
+  --bg-glass-strong: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
 
   /* Text Colors */
-  --text-heading: #0f172a;
+  --text-heading: #000000;
   --text-body: #334155;
   --text-muted: #64748b;
   --text-inverse: #ffffff;
@@ -106,7 +106,12 @@ body {
 }
 
 /* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-heading);
   line-height: 1.2;
@@ -302,16 +307,18 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
+  height: 48px;
   border-radius: var(--radius-lg);
   border: 2px solid transparent;
   cursor: pointer;
   transition: all var(--transition-base);
   white-space: nowrap;
   text-decoration: none;
+  line-height: normal;
 }
 
 .btn:hover {
@@ -369,14 +376,16 @@ img {
 }
 
 .btn--sm {
-  padding: 0.4rem 1rem;
-  font-size: 0.8rem;
+  height: 40px;
+  padding: 0 1.25rem;
+  font-size: 0.85rem;
   border-radius: var(--radius-md);
 }
 
 .btn--lg {
-  padding: 0.85rem 2rem;
-  font-size: 1rem;
+  height: 56px;
+  padding: 0 2.25rem;
+  font-size: 1.05rem;
 }
 
 .btn--icon {
@@ -667,10 +676,21 @@ img {
   color: var(--text-body);
 }
 
-.toast--success { border-left: 4px solid var(--color-accent); }
-.toast--error { border-left: 4px solid #ef4444; }
-.toast--warning { border-left: 4px solid #f59e0b; }
-.toast--info { border-left: 4px solid #3b82f6; }
+.toast--success {
+  border-left: 4px solid var(--color-accent);
+}
+
+.toast--error {
+  border-left: 4px solid #ef4444;
+}
+
+.toast--warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.toast--info {
+  border-left: 4px solid #3b82f6;
+}
 
 .toast__icon {
   width: 24px;
@@ -789,7 +809,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8));
   z-index: 0;
 }
 
@@ -972,6 +992,7 @@ img {
     opacity: 0;
     transform: translateX(100%);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -983,6 +1004,7 @@ img {
     opacity: 1;
     transform: translateX(0);
   }
+
   to {
     opacity: 0;
     transform: translateX(100%);
@@ -991,25 +1013,46 @@ img {
 
 /* Skeleton shimmer */
 @keyframes skeletonShimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Pulse glow */
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.2); }
-  50% { box-shadow: 0 0 30px rgba(var(--color-primary-rgb), 0.4); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(var(--color-primary-rgb), 0.4);
+  }
 }
 
 /* Float */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Spin */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ============================================
@@ -1083,6 +1126,7 @@ img {
 }
 
 @media (max-width: 768px) {
+
   /* Sections */
   .section {
     padding: 3.5rem 0;
@@ -1130,6 +1174,7 @@ img {
     flex-direction: column;
   }
 }
+
 @media (max-width: 640px) {
   .footer__grid {
     grid-template-columns: 1fr;
