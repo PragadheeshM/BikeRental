@@ -1123,6 +1123,23 @@ img {
     font-size: 1rem;
     justify-content: space-between;
   }
+
+  .navbar__item--auth {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .navbar__mobile-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .navbar__mobile-auth .btn {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
