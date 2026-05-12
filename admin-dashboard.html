@@ -52,7 +52,7 @@
         </div>
         <div class="flex items-center gap-3">
           <button class="btn btn--icon btn--ghost" data-theme-toggle aria-label="Toggle dark mode"><i data-lucide="sun" class="w-5 h-5 icon-sun" style="display:none;"></i><i data-lucide="moon" class="w-5 h-5 icon-moon"></i></button>
-          <button class="btn btn--ghost text-xs font-600 px-2" data-rtl-toggle aria-label="Toggle RTL">
+          <button class="btn btn--ghost btn--sm text-xs font-600 px-2" data-rtl-toggle aria-label="Toggle RTL">
             <span class="rtl-text">RTL</span>
             <span class="ltr-text" style="display:none;">LTR</span>
           </button>
@@ -148,70 +148,45 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-2">
-                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
-                      <span class="font-600" style="color: var(--text-heading);">Sarah Chen</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4 text-slate-500">BMW GS 1250</td>
-                  <td class="py-3 px-4 text-slate-500">Mar 28, 2026</td>
-                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$285</td>
-                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td>
-                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                <tr class="animate-on-scroll" data-delay="100">
+                  <td><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><div class="font-600" style="color: var(--text-heading);">Sarah Chen</div></div></td>
+                  <td><div class="text-xs font-600">BMW GS 1250</div></td>
+                  <td>Mar 28, 2026</td>
+                  <td>$285.00</td>
+                  <td><span class="badge badge--success">Active</span></td>
+                  <td><button class="btn btn--icon btn--ghost btn--sm"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button></td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-2">
-                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
-                      <span class="font-600" style="color: var(--text-heading);">Marcus Rivera</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4 text-slate-500">Kawasaki Ninja 650</td>
-                  <td class="py-3 px-4 text-slate-500">Mar 27, 2026</td>
-                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$165</td>
-                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-blue-500/10 text-blue-500">Upcoming</span></td>
-                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                <tr class="animate-on-scroll" data-delay="200">
+                  <td><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><div class="font-600" style="color: var(--text-heading);">Marcus Rivera</div></div></td>
+                  <td><div class="text-xs font-600">Kawasaki Ninja 650</div></td>
+                  <td>Mar 27, 2026</td>
+                  <td>$165.00</td>
+                  <td><span class="badge badge--info">Upcoming</span></td>
+                  <td><button class="btn btn--icon btn--ghost btn--sm"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button></td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-2">
-                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
-                      <span class="font-600" style="color: var(--text-heading);">Tom Wheeler</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4 text-slate-500">Mountain Tour (5D)</td>
-                  <td class="py-3 px-4 text-slate-500">Mar 25, 2026</td>
-                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$899</td>
-                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-accent/10 text-accent">Active</span></td>
-                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                <tr class="animate-on-scroll" data-delay="300">
+                  <td><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><div class="font-600" style="color: var(--text-heading);">Tom Wheeler</div></div></td>
+                  <td><div class="text-xs font-600">Mountain Tour (5D)</div></td>
+                  <td>Mar 25, 2026</td>
+                  <td>$899.00</td>
+                  <td><span class="badge badge--success">Active</span></td>
+                  <td><button class="btn btn--icon btn--ghost btn--sm"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button></td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-2">
-                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
-                      <span class="font-600" style="color: var(--text-heading);">Lisa Park</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4 text-slate-500">Vespa Primavera</td>
-                  <td class="py-3 px-4 text-slate-500">Mar 22, 2026</td>
-                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$54</td>
-                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Completed</span></td>
-                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                <tr class="animate-on-scroll" data-delay="400">
+                  <td><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><div class="font-600" style="color: var(--text-heading);">Lisa Park</div></div></td>
+                  <td><div class="text-xs font-600">Vespa Primavera</div></td>
+                  <td>Mar 22, 2026</td>
+                  <td>$54.00</td>
+                  <td><span class="badge badge--info">Completed</span></td>
+                  <td><button class="btn btn--icon btn--ghost btn--sm"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button></td>
                 </tr>
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-2">
-                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" />
-                      <span class="font-600" style="color: var(--text-heading);">Emily Davis</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4 text-slate-500">Royal Enfield 350</td>
-                  <td class="py-3 px-4 text-slate-500">Mar 20, 2026</td>
-                  <td class="py-3 px-4 font-600" style="color: var(--text-heading);">$75</td>
-                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs font-600 rounded-full bg-red-500/10 text-red-500">Cancelled</span></td>
-                  <td class="py-3 px-4"><button class="btn btn--ghost btn--sm text-xs">View</button></td>
+                <tr class="animate-on-scroll" data-delay="500">
+                  <td><div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=32&h=32&fit=crop&crop=face" class="w-8 h-8 rounded-full" alt="" /><div class="font-600" style="color: var(--text-heading);">Emily Davis</div></div></td>
+                  <td><div class="text-xs font-600">Royal Enfield 350</div></td>
+                  <td>Mar 20, 2026</td>
+                  <td>$75.00</td>
+                  <td><span class="badge badge--danger">Cancelled</span></td>
+                  <td><button class="btn btn--icon btn--ghost btn--sm"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button></td>
                 </tr>
               </tbody>
             </table>
